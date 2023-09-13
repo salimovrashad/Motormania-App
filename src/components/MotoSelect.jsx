@@ -1,6 +1,7 @@
 import Aos from 'aos'
 import React, { useContext, useEffect } from 'react'
 import { LangContext } from '../context/LangContext';
+import { Link } from 'react-router-dom';
 
 const MotoSelect = () => {
   const [lang] = useContext(LangContext);
@@ -16,7 +17,7 @@ const MotoSelect = () => {
   <div className="card-img-overlay mt-5">
     <h2 className="card-title display-5 w-50">{lang === "en"?"New Style Bikes":"Yeni Stil Motosikletlər"}</h2>
     <p className="card-text">{lang === "en"?"Power tools of next level":"Yeni Nəsil Alətlər"}</p>
-    <button className='btn btn-danger rounded-pill px-5 py-2'>{lang === "en"?"Shop Now":"İndi Al"}</button>
+    <Link to='/shop'><button className='btn btn-danger rounded-pill px-5 py-2'>{lang === "en"?"Shop Now":"İndi Al"}</button></Link>
   </div>
 </div>
 
@@ -26,7 +27,7 @@ const MotoSelect = () => {
   <div className="card-img-overlay mt-5">
     <h2 className="card-title display-5 w-50">{lang === "en"?"Bike Helmet":"Motosiklet Dəbilqələri"}</h2>
     <p className="card-text">{lang === "en"?"New Style Bike Helmet":"Yeni Nəsil Motosiklet Kaskları"}</p>
-    <button className='btn btn-danger rounded-pill px-5 py-2'>{lang === "en"?"Shop Now":"İndi Al"}</button>
+    <Link to='/shop'><button className='btn btn-danger rounded-pill px-5 py-2'>{lang === "en"?"Shop Now":"İndi Al"}</button></Link>
   </div>
 </div>
 

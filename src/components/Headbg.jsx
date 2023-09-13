@@ -11,6 +11,7 @@ import BikeFilter from "./BikeFilter";
 import { LangContext } from "../context/LangContext";
 import CollapsibleExample from "./CollapsibleExample";
 import FooterBike from "./FooterBike";
+import { Link } from "react-router-dom";
 
 
 const Headbg = () => {
@@ -38,13 +39,14 @@ const Headbg = () => {
               {lang === "en"?"Browse our range of Gore-Tex motorcycle clothing including : Rukka, Dainese, Richa, Alpinestars, and more":"Gore-Tex motosiklet geyimləri də daxil olmaqla bizim çeşidlərimizə nəzər salın: Rukka, Dainese, Richa, Alpinestars və s."}
               </p>
               <div className="d-grid gap-2 d-sm-flex justify-content-sm-start">
-                <button
+                <Link to="/shop"><button
                   type="button"
                   className="btn btn-danger btn-lg px-5 gap-3 rounded-pill"
                 >
                 {lang === "en"?"Shop Now":"İndi Al"}
 
                 </button>
+                </Link>
               </div>
             </div>
           </div>

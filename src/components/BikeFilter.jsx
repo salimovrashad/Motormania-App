@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import Slider from 'react-slick';
 import '../../node_modules/slick-carousel/slick/slick.css'
 import '../../node_modules/slick-carousel/slick/slick-theme.css'
+import { Link } from 'react-router-dom';
 
 export default function BikeFilter() {
   const [lang] = useContext(LangContext);
@@ -48,7 +49,7 @@ export default function BikeFilter() {
       <div className="container py-5">
         <div className='d-flex justify-content-between pb-5'>
                     <h1 class="display-5 fw-bold">{lang === "en"?"Popular Bikes":"Məşhur Motosikletlər"}</h1>
-                    <button className='btn btn-outline-danger px-5 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button>
+                    <Link to="/shop"><button className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
                 </div>
         <Slider {...settings}>
           <div>

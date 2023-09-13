@@ -35,7 +35,7 @@ const Shop = () => {
         
         {motos.map(item=>(
 
-            <ShopCard image={item.image} name={item.name} price={item.price} id={item.id}/>
+            <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
 
         ))}
 

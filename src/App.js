@@ -11,6 +11,10 @@ import AddMoto from './pages/admin/update/AddMoto'
 import EditMoto from './pages/admin/update/EditMoto'
 import Login from './pages/Login'
 import Details from './pages/Details'
+import { CartProvider } from 'react-use-cart'
+import CartPage from './pages/CartPage'
+import CheckOut from './pages/CheckOut'
+import SuccessPage from './pages/SuccessPage'
 
 
 const Main = () => {
@@ -25,8 +29,11 @@ const Main = () => {
         <Route path='/about' element={<About />}></Route>
         <Route path='/shop' element={<Shop />}></Route>
         <Route path='/shop/:url' element={<Details />}></Route>
+        <Route path='/cart' element={<CartPage />}></Route>
+        <Route path='/checkout' element={<CheckOut />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        <Route path='/login' element={<Admin />}></Route>
+        <Route path='/success' element={<SuccessPage />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>
         <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
@@ -42,7 +49,9 @@ const App = () => {
       <BrowserRouter>
       <LangProvider>
       <ModeProvider>
-        <Main />
+        <CartProvider>
+          <Main />
+        </CartProvider>
       </ModeProvider>
       </LangProvider>
       </BrowserRouter>

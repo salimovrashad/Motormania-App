@@ -1,6 +1,7 @@
 import Aos from 'aos';
 import React, { useContext, useEffect } from 'react'
 import { LangContext } from '../context/LangContext';
+import { Link } from 'react-router-dom';
 
 const HelmetSecond = () => {
   const [lang] = useContext(LangContext);
@@ -17,9 +18,10 @@ const HelmetSecond = () => {
                     {lang === "en"?"Limited offer Get Your helmet":"Məhdud Təkliflə Dəbilqənizi Alın"}
                 </p>
                 <div className="d-inline-flex gap-2 mb-2">
-                    <button className="btn btn-danger btn-lg px-4 rounded-pill" type="button">
+                    <Link to="/shop"><button className="btn btn-danger btn-lg px-4 rounded-pill" type="button">
                     {lang === "en"?"Shop Now":"İndi Al"}
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>
