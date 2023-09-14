@@ -9,12 +9,13 @@ import { LangProvider } from './context/LangContext'
 import Admin from './pages/admin/Admin'
 import AddMoto from './pages/admin/update/AddMoto'
 import EditMoto from './pages/admin/update/EditMoto'
-import Login from './pages/Login'
+// import Login from './pages/Login'
 import Details from './pages/Details'
 import { CartProvider } from 'react-use-cart'
 import CartPage from './pages/CartPage'
 import CheckOut from './pages/CheckOut'
 import SuccessPage from './pages/SuccessPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 
 const Main = () => {
@@ -37,6 +38,7 @@ const Main = () => {
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>
         <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
+        <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       </div>
     </div>

@@ -11,7 +11,7 @@ const CheckOut = () => {
         <div className="container">
   <main>
     <div className="py-5 text-center">
-      <img className="d-block mx-auto mb-4" src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png" alt width={500} height={57} />
+      <img className="d-block mx-auto mb-4" src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png" alt='...' width={500} height={57} />
       <h2>Checkout form</h2>
       <p className="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
     </div>
@@ -182,14 +182,6 @@ const CheckOut = () => {
       </div>
     </div>
   </main>
-  <footer className="my-5 pt-5 text-body-secondary text-center text-small">
-    <p className="mb-1">© 2017–2023 Company Name</p>
-    <ul className="list-inline">
-      <li className="list-inline-item"><a href="#">Privacy</a></li>
-      <li className="list-inline-item"><a href="#">Terms</a></li>
-      <li className="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
 </div>
 
     </div>

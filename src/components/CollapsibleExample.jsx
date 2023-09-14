@@ -84,7 +84,7 @@ function CollapsibleExample() {
               <Link className="nav-link" to="/blog">
               {lang === "en"?"BLOG":"BLOG"}
               </Link>
-              <Link className="nav-link" to="/blog">
+              <Link className="nav-link" to="/wishlist">
               {lang === "en"?"WİSHLİST":"FAVORİLƏR"}
               </Link>
               <Link className="nav-link" to="/contactus">

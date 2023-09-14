@@ -3,6 +3,7 @@ import CollapsibleExample from '../components/CollapsibleExample'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import FooterBike from '../components/FooterBike';
+import { Button } from 'react-bootstrap';
 
 const Details = () => {
   
@@ -31,7 +32,7 @@ const Details = () => {
       <p className="lead">{productdetails.describtion}</p>
       <p className='lead'>{productdetails.price} $</p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" className="btn btn-danger btn-lg px-4 me-md-2">Add To Card</button>
+        <Button type="button" className="btn btn-danger btn-lg px-4 me-md-2">Add To Card</Button>
       </div>
     </div>
   </div>
