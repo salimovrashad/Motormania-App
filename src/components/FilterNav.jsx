@@ -1,6 +1,9 @@
 import React from 'react'
 
 const FilterNav = () => {
+  const handleClick = (cat) => {
+    console.log(cat);
+  }
   return (
     <div>
   <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-3">
@@ -14,22 +17,22 @@ const FilterNav = () => {
             <a className="nav-link" href="/">ALL</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">ACCESSORİES</a>
+            <a className="nav-link" onClick={()=>{handleClick("accessories")}}>ACCESSORİES</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">BİKES</a>
+            <a className="nav-link" onClick={()=>{handleClick("bikes")}}>BİKES</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">GLOVES</a>
+            <a className="nav-link" onClick={()=>{handleClick("gloves")}}>GLOVES</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">JACKETS</a>
+            <a className="nav-link" onClick={()=>{handleClick("jackets")}}>JACKETS</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">BOOTS</a>
+            <a className="nav-link" onClick={()=>{handleClick("boots")}}>BOOTS</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">HELMETS</a>
+            <a className="nav-link" onClick={()=>{handleClick("helmets")}}>HELMETS</a>
           </li>
         </ul>
       </div>

@@ -5,15 +5,19 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaUserAlt, FaSistrix } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ModeContext } from "../context/ModeContext";
 import { LangContext } from "../context/LangContext";
 import { useCart } from "react-use-cart";
+import { useSelector } from "react-redux";
 
 function CollapsibleExample() {
   const [mode, setMode] = useContext(ModeContext);
   const [lang, setLang] = useContext(LangContext);
   const {totalItems} = useCart();
+
+  const [query, setQuery] = useState(null);
+  const motos = useSelector(p=>p.mr);
   return (
     <>
       <Navbar
@@ -32,22 +36,13 @@ function CollapsibleExample() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-around">
             <Nav className="w-50 d-flex justify-content-center">
-              <form className="d-flex w-100" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder={lang === "en"?"Search":"Axtarış"}
-                  aria-label="Search"
-                />
-                <button className="btn btn-danger rounded-pill px-4" type="submit">
-                  <FaSistrix />
-                </button>
-              </form>
+            
             </Nav>
             <Nav>
-              <Link className="nav-link" to="/login">
-                <FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}
-              </Link>
+            <div>
+              {localStorage.getItem('active') === 'true' ? <div className="btn">user@user.com</div> : <Link className="btn" to="/login">
+              <FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>}
+
               <Link to="/cart"  className="btn border-danger position-relative me-3">
                     <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -58,10 +53,38 @@ function CollapsibleExample() {
                 mode === 'light' ?setMode('dark'):setMode('light');
                 mode === 'light' ?localStorage.setItem('mode','dark'):localStorage.setItem('mode','light');
               }}>{mode==='light'?"DARK":"LIGHT"}</Button>
-              <Button variant="danger px-3" onClick={() => {
+              <Button variant="danger px-3 me-2" onClick={() => {
                 lang === 'az' ?setLang('en'):setLang('az');
                 lang === 'az' ?localStorage.setItem('lang','en'):localStorage.setItem('lang','az');
               }}>{lang === 'az'?'EN':'AZ'}</Button>
+            <Button variant="danger px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <FaSistrix />
+            </Button>
+            <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Search</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                  </div>
+                  <div className="modal-body">
+                    <form className="input-group mb-3">
+                      <input onChange={e => setQuery(e.target.value)} type="text" className="form-control" placeholder="Enter product name" aria-label="Enter product name" aria-describedby="button-addon2" />
+                      <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                    </form>
+                    
+                    <ul className="list-group">
+                      {motos.filter(p => p.name.toLowerCase().includes(query)).map(item => (
+                        <li key={item.id} className="list-group-item d-flex justify-content-between">{item.name}<img width={50} src={item.image} alt="/" /></li>
+                      ))}
+                    </ul>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            </div>
             </Nav>
           </Navbar.Collapse>
         </Container>

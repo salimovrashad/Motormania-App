@@ -4,9 +4,13 @@ import Slider from 'react-slick';
 import '../../node_modules/slick-carousel/slick/slick.css'
 import '../../node_modules/slick-carousel/slick/slick-theme.css'
 import { Link } from 'react-router-dom';
+import ShopCard from './ShopCard';
+import { useSelector } from 'react-redux';
 
 export default function BikeFilter() {
   const [lang] = useContext(LangContext);
+  const motos = useSelector(p=>p.mr);
+  const catData = motos.filter(p=>p.type === "Bikes");
 
     const settings = {
       infinite: true,
@@ -48,70 +52,14 @@ export default function BikeFilter() {
     return (
       <div className="container py-5">
         <div className='d-flex justify-content-between pb-5'>
-                    <h1 class="display-5 fw-bold">{lang === "en"?"Popular Bikes":"Məşhur Motosikletlər"}</h1>
+                    <h1 className="display-5 fw-bold">{lang === "en"?"Popular Bikes":"Məşhur Motosikletlər"}</h1>
                     <Link to="/shop"><button className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
                 </div>
         <Slider {...settings}>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
-          <div>
-          <div className="card" style={{width: '19rem'}}>
-                <img src="https://themebing.com/wp/motormania/wp-content/uploads/2021/01/helmet-7-600x600.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">AGV Sports Modular</h5>
-                    <p className="card-text">$563.00</p>
-                    <a href="/" className="btn btn-outline-danger w-100">Add to Card</a>
-                </div>
-            </div>
-          </div>
+          {catData.map(item=>(
+              <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
+          ))
+          }
         </Slider>
       </div>
     );

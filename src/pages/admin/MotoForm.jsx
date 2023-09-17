@@ -49,7 +49,7 @@ const MotoForm = ({sendData,editmoto}) => {
 
                     <Form.Group className="mb-3" >
                         <Form.Label>Type</Form.Label>
-                        <Form.Control value={type} onChange={e=>setType(e.target.value)} type="text" placeholder="Enter type" />
+                        <Form.Control value={type} onChange={e=>setType(e.target.value)} type="text" placeholder="Example: Bikes, Accessories, Gloves, Jackets, Boots, Helmets" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" >

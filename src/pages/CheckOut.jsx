@@ -2,13 +2,14 @@ import React from 'react'
 import AdminNav from '../components/AdminNav'
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
+import FooterBike from '../components/FooterBike';
 
 const CheckOut = () => {
     const { items,totalItems, updateItemQuantity, removeItem, isEmpty,cartTotal,emptyCart } = useCart();
   return (
     <div>
         <AdminNav />
-        <div className="container">
+        <div className="container mb-5">
   <main>
     <div className="py-5 text-center">
       <img className="d-block mx-auto mb-4" src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png" alt='...' width={500} height={57} />
@@ -52,14 +53,14 @@ const CheckOut = () => {
           <div className="row g-3">
             <div className="col-sm-6">
               <label htmlFor="firstName" className="form-label">First name</label>
-              <input type="text" className="form-control" id="firstName" placeholder defaultValue required />
+              <input type="text" className="form-control" id="firstName" placeholder="Name" defaultValue="" required />
               <div className="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div className="col-sm-6">
               <label htmlFor="lastName" className="form-label">Last name</label>
-              <input type="text" className="form-control" id="lastName" placeholder defaultValue required />
+              <input type="text" className="form-control" id="lastName" placeholder="Surname" defaultValue="" required />
               <div className="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -177,13 +178,13 @@ const CheckOut = () => {
             </div>
           </div>
           <hr className="my-4" />
-          <Link to="/success"><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
+          <Link to={localStorage.getItem('active') === 'true' ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
         </form>
       </div>
     </div>
   </main>
 </div>
-
+        <FooterBike />
     </div>
   )
 }

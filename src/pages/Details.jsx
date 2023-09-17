@@ -11,7 +11,6 @@ const Details = () => {
   const {url} = useParams();
   const productdetails = mrState.find(p=>p.id.toString() === url)
   const [image, setImage] = useState(productdetails.image);
-  console.log(productdetails);
   return (
     <>
     <CollapsibleExample />

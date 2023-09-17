@@ -7,13 +7,13 @@ import { removeMotoFromDatabase } from '../../manager/actions/motoAction';
 function Admin() {
     const motos = useSelector(p=>p.mr);
     const dispatch = useDispatch();
-    
+
   return (
    <Container className='py-5'>
-    <Link className="btn btn-success my-4 me-2" to="/shop">Shop</Link>        
-    <Link className="btn btn-success my-4" to="/admin/add">Add Product</Link>  
+    <Link className="btn btn-danger my-4 me-2" to="/shop">Shop</Link>        
+    <Link className="btn btn-danger my-4" to="/admin/add">Add Product</Link>  
         <Col md={12}>
-        <Table striped bordered hover>
+        <Table className='table-dark' bordered='1px' hover>
       <thead>
         <tr>
           <th>#</th>

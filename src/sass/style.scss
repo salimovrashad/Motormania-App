@@ -12,13 +12,13 @@ li *{
     height: 100vh;
     background-image: linear-gradient(0deg, rgba(0,0,0,0.80) 100%, rgba(0,0,0,1) 100%),url(https://themebing.com/wp/motormania/wp-content/uploads/2020/05/pexels-javier-aguilera-2611691.jpg);
 }
-.dark, .dark nav, .dark .nav-link, .dark .motobg, .dark .bckcard, .dark .hseconddark, .dark .bikefltr, .dark .helmetfltr, .dark .login, .dark .darkcard{
+.dark, .dark nav, .dark .nav-link, .dark .motobg, .dark .bckcard, .dark .hseconddark, .dark .bikefltr, .dark .helmetfltr, .dark .login, .dark .darkcard, .dark .modal-content{
     background-color: black !important;
     color: white !important;
 }
-.light nav, .light .nav-link, .light .motobg, .light .bckcard, .light .hseconddark, .light .bikefltr, .light .helmetfltr, .light .login .dark .darkcard{
+.light nav, .light .nav-link, .light .motobg, .light .bckcard, .light .hseconddark, .light .bikefltr, .light .helmetfltr, .light .login, .light .darkcard, .light .modal-content{
     background-color: white !important;
-    color: black;
+    color: black !important;
 }
 .motocard{
     width: 620px;
@@ -78,3 +78,12 @@ li *{
 .nav-link:hover{
     color: red;
 }
+.cursor{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 465px) {
+    .hsecond img{
+        width: 250px;
+    }
+  }

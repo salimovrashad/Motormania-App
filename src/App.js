@@ -9,7 +9,7 @@ import { LangProvider } from './context/LangContext'
 import Admin from './pages/admin/Admin'
 import AddMoto from './pages/admin/update/AddMoto'
 import EditMoto from './pages/admin/update/EditMoto'
-// import Login from './pages/Login'
+import Login from './pages/Login'
 import Details from './pages/Details'
 import { CartProvider } from 'react-use-cart'
 import CartPage from './pages/CartPage'
@@ -33,7 +33,7 @@ const Main = () => {
         <Route path='/cart' element={<CartPage />}></Route>
         <Route path='/checkout' element={<CheckOut />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/login' element={<Admin />}></Route>
+        <Route path='/login' element={<Login />}></Route>
         <Route path='/success' element={<SuccessPage />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>

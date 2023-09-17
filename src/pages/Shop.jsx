@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { LangContext } from '../context/LangContext';
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import ShopCard from '../components/ShopCard';
@@ -6,11 +6,16 @@ import { Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import CollapsibleExample from '../components/CollapsibleExample';
 import FooterBike from '../components/FooterBike';
-import FilterNav from '../components/FilterNav';
 
 const Shop = () => {
   const motos = useSelector(p=>p.mr);
   const [lang] = useContext(LangContext);
+
+  const [catMotos,setCatMotos] = useState([]);
+  const handleClick = (cat) => {
+    const catData = motos.filter(p=>p.type === cat);
+    setCatMotos(catData);
+  }
 
   return (
     <>
@@ -30,14 +35,54 @@ const Shop = () => {
     </div>
 
     <Container className='py-5'>
-      <FilterNav />
+    <div>
+  <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom border-3">
+    <div className="container-fluid">
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav category">
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("")}}>ALL</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Accessories")}}>ACCESSORİES</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Bikes")}}>BİKES</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Gloves")}}>GLOVES</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Jackets")}}>JACKETS</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Boots")}}>BOOTS</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Helmets")}}>HELMETS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
       <Row className='g-3 mt-3'>
         
-        {motos.map(item=>(
+        {catMotos.length === 0 ? motos.map(item=>(
+
+            <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
+
+        )) : 
+        
+        catMotos.map(item=>(
 
             <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
 
         ))}
+
 
       </Row>
     </Container>

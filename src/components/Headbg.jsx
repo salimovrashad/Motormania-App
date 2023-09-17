@@ -27,11 +27,6 @@ const Headbg = () => {
         <Container>
           <div className="px-4 py-5 my-5 col-lg-6" data-aos="zoom-in">
             <h1 className="display-3 fw-bold text-light">
-
-              {/* Find the Best Motorbike Parts For{" "}
-              <span className="display-3 fw-bold text-danger">
-                Your Vehicles
-              </span> */}
               {lang === "en"?"Find the Best Motorbike Parts For Your Vehicles":"Motosiklet üçün ən yaxşı ehtiyyat hissələrini tapın"}
             </h1>
             <div className="col-lg-12">
