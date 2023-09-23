@@ -16,6 +16,7 @@ import CartPage from './pages/CartPage'
 import CheckOut from './pages/CheckOut'
 import SuccessPage from './pages/SuccessPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ContactUs from './pages/ContactUs'
 
 
 const Main = () => {
@@ -31,6 +32,7 @@ const Main = () => {
         <Route path='/shop' element={<Shop />}></Route>
         <Route path='/shop/:url' element={<Details />}></Route>
         <Route path='/cart' element={<CartPage />}></Route>
+        <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/checkout' element={<CheckOut />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/login' element={<Login />}></Route>

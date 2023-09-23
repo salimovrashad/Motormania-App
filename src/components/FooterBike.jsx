@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LangContext } from '../context/LangContext';
 
 const FooterBike = () => {
+  const lang = useContext(LangContext);
   return (
     <div className='dark'>
         <div className="container">
@@ -8,39 +10,39 @@ const FooterBike = () => {
     <div className="row">
       <div className="col-6 col-md-3 mb-3">
         <h3>Get In Touch</h3>
-        <h4 className='text-danger'>Address:</h4>
+        <h4 className='text-danger'>{lang === "en"?"Address":"Ünvan"}:</h4>
         <p>(843) 846-2230 20 Island Tank Rd Beaufort, South Carolina(SC).</p>
         <h4 className='text-danger'>Email:</h4>
         <p>example@mail.com</p>
       </div>
       <div className="col-6 col-md-2 mb-3">
-        <h3>Our Services</h3>
+        <h3>{lang === "en"?"Our Services":"Bizim Servislər"}</h3>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Home</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Features</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Pricing</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">FAQs</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">About</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Home":"Ana Səhifə"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Features":"Cəhətlər"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Pricing":"Qiymətlər"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"FAQs":"FAQ"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"About":"Haqqımızda"}</a></li>
         </ul>
       </div>
       <div className="col-6 col-md-2 mb-3">
         <h3>Useful Links</h3>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Home</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Features</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">Pricing</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">FAQs</a></li>
-          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">About</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Home":"Ana Səhifə"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Features":"Cəhətlər"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Pricing":"Qiymətlər"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"FAQs":"FAQs"}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"About":"Haqqımızda"}</a></li>
         </ul>
       </div>
       <div className="col-md-4 offset-md-1 mb-3">
         <form>
-          <h3>Subscribe</h3>
+          <h3>{lang === "en"?"Subscribe":"Abunə ol"}</h3>
           <p>here are many variations of passages of Lorem Ipsum available</p>
           <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-            <label htmlFor="newsletter1" className="visually-hidden">Email address</label>
+            <label htmlFor="newsletter1" className="visually-hidden">{lang === "en"?"Email Address":"E-Poçt Adresi"}</label>
             <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-            <button className="btn btn-danger rounded-pill" type="button">Subscribe</button>
+            <button className="btn btn-danger rounded-pill" type="button">{lang === "en"?"Subscribe":"Abunə ol"}</button>
           </div>
         </form>
       </div>

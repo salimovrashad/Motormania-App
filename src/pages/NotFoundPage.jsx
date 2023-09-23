@@ -15,7 +15,7 @@ const NotFoundPage = () => {
       <div className="container col-xl-10 col-xxl-12 py-5">
   <div className="row align-items-center py-5">
     <div className="col-lg-12 text-center text-lg-start">
-      <h1 className="display-4 fw-bold lh-1 text-light mb-3">{lang === "en"?"Page Not Found":"Haqqımızda"}</h1>
+      <h1 className="display-4 fw-bold lh-1 text-light mb-3">{lang === "en"?"Page Not Found":"Səhifə Tapılmadı"}</h1>
       <h5 className='text-light'><span className='text-danger'>{lang === "en"?"Home":"Ana Səhifə"}</span><RiArrowRightDoubleFill />{lang === "en"?"404 Not Found":"Haqqımızda"}</h5>
     </div>
   </div>
