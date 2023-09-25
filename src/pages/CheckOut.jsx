@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FooterBike from '../components/FooterBike';
 
 const CheckOut = () => {
-    const { items,totalItems, updateItemQuantity, removeItem, isEmpty,cartTotal,emptyCart } = useCart();
+    const { items,totalItems, cartTotal } = useCart();
   return (
     <div>
         <AdminNav />

@@ -18,7 +18,14 @@ const HelmetSecond = () => {
                     {lang === "en"?"Limited offer Get Your helmet":"Məhdud Təkliflə Dəbilqənizi Alın"}
                 </p>
                 <div className="d-inline-flex gap-2 mb-2">
-                    <Link to="/shop"><button className="btn btn-danger btn-lg px-4 rounded-pill" type="button">
+                    <Link to="/shop"><button className="btn btn-danger btn-lg px-4 rounded-pill" onClick={() => {
+                                      window.scroll({
+                                        top: 0,
+                                        left: 0,
+                                        behavior: "smooth",
+                                      });
+                                      }}
+                                       type="button">
                     {lang === "en"?"Shop Now":"İndi Al"}
                     </button>
                     </Link>

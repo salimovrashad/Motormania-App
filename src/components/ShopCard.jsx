@@ -28,7 +28,12 @@ const ShopCard = ({image,name,price,id,alldata}) => {
     <h5 className="card-title">{name}</h5>
     <p className="card-text">{price} $</p>
     <Button className="btn btn-danger me-3" onClick={() => { notify(addItem(alldata)) }}>Add To Cart</Button>
-    <Link to={`/shop/${id}`}><a href='/' className="btn btn-outline-danger">Details</a></Link>
+    <Link to={`/shop/${id}`}><a href='/' className="btn btn-outline-danger" onClick={() => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });}}>Details</a></Link>
   </div>
   <ToastContainer
                     position="bottom-right"

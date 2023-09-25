@@ -3,7 +3,6 @@ import FooterBike from '../components/FooterBike'
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import { LangContext } from '../context/LangContext';
 import CollapsibleExample from '../components/CollapsibleExample';
-import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   const [lang] = useContext(LangContext);

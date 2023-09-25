@@ -37,6 +37,13 @@ const Headbg = () => {
                 <Link to="/shop"><button
                   type="button"
                   className="btn btn-danger btn-lg px-5 gap-3 rounded-pill"
+                  onClick={() => {
+                    window.scroll({
+                      top: 0,
+                      left: 0,
+                      behavior: "smooth",
+                    });
+                    }}
                 >
                 {lang === "en"?"Shop Now":"İndi Al"}
 

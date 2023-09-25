@@ -14,7 +14,7 @@ const FilterNav = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav category">
           <li className="nav-item">
-            <a className="nav-link" href="/">ALL</a>
+            <a className="nav-link">ALL</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" onClick={()=>{handleClick("accessories")}}>ACCESSORİES</a>
