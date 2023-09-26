@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import CollapsibleExample from '../components/CollapsibleExample'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import FooterBike from '../components/FooterBike';
 import { Button } from 'react-bootstrap';
+import { LangContext } from '../context/LangContext';
+import { useCart } from 'react-use-cart';
 
 const Details = () => {
-  
+  const { addItem } = useCart();
+  const [lang] = useContext(LangContext);
   const mrState = useSelector((state) => state.mr);
   const {url} = useParams();
   const productdetails = mrState.find(p=>p.id.toString() === url)
@@ -31,7 +34,7 @@ const Details = () => {
       <p className="lead">{productdetails.describtion}</p>
       <p className='lead'>{productdetails.price} $</p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-        <Button type="button" className="btn btn-danger btn-lg px-4 me-md-2">Add To Card</Button>
+        <Button onClick={() => { (addItem(productdetails)) }} type="button" className="btn btn-danger btn-lg px-4 me-md-2">{lang === "en"?"Add To Cart":"Səbətə Əlavə Et"}</Button>
       </div>
     </div>
   </div>

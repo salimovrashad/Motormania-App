@@ -44,25 +44,25 @@ const Shop = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav category">
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("")}}>ALL</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("")}}>{lang === "en"?"ALL":"Hamısı"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Accessories")}}>ACCESSORİES</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Accessories")}}>{lang === "en"?"ACCESSORİES":"Aksesuarlar"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Bikes")}}>BİKES</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Bikes")}}>{lang === "en"?"BİKES":"Motosikletlər"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Gloves")}}>GLOVES</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Gloves")}}>{lang === "en"?"GLOVES":"Əlcəklər"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Jackets")}}>JACKETS</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Jackets")}}>{lang === "en"?"JACKET":"Jiletlər"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Boots")}}>BOOTS</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Boots")}}>{lang === "en"?"BOOTS":"Ayaqqabılar"}</div>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor" href='...' onClick={()=>{handleClick("Helmets")}}>HELMETS</a>
+            <div className="nav-link cursor" onClick={()=>{handleClick("Helmets")}}>{lang === "en"?"HELMETS":"Kasklar"}</div>
           </li>
         </ul>
       </div>

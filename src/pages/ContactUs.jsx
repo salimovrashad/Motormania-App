@@ -3,6 +3,7 @@ import FooterBike from '../components/FooterBike'
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import { LangContext } from '../context/LangContext';
 import CollapsibleExample from '../components/CollapsibleExample';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const ContactUs = () => {
   const [lang] = useContext(LangContext);
@@ -20,35 +21,74 @@ const ContactUs = () => {
                 </div>
             </div>
         </div>
-        <div className="px-4 py-5 my-5 text-center">
-            <h1 className="display-5 fw-bold text-body-dark py-3">{lang === "en"?"Leave us a Message":"Bizə Mesaj Yazın"}</h1>
-            <div className="col-lg-6 mx-auto">
-                <p className="lead text-body-secondary mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec mattis, pulvinar dapibus leo. Start working with Landrick that can provide everything</p>
-                <div className="col-xxl-12 px-4 py-5">
-  <div className="row flex-lg-row align-items-center g-5 py-2">
-    <div className="col-12 col-sm-8 col-lg-6">
-      <img src="https://themebing.com/wp/motormania/wp-content/uploads/2020/08/breadcrumbs.jpg" className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width={700} height={500} loading="lazy" />
-    </div>
-    <form className="col-lg-6">
-    <div>
-  <div className="mb-3">
-    <label htmlFor="exampleFormControlInput1" className="form-label" aria-required>Email address</label>
-    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
-  </div>
-  <div className="mb-3">
-    <label htmlFor="exampleFormControlTextarea1" className="form-label">Message</label>
-    <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} defaultValue={""} />
-  </div>
-  <button type="submit" class="btn btn-danger">Send Message</button>
-</div>
-
-
-    </form>
-  </div>
-</div>
-
-            </div>
-        </div>
+        <Container className='py-5'>
+     
+     <Row className="mb-5 my-4">
+       <Col lg="12">
+         <h1 className="display-4 mb-4 text-center">{lang === "en"?"Contact Us":"Bizimlə Əlaqə"}</h1>
+       </Col>
+     </Row>
+     <Row className="sec_sp">
+       <Col lg="5" className="mb-5">
+         <h3>Əlaqə Vasitələri:</h3>
+        <h4 className='text-danger'>{lang === "en"?"Address":"Ünvan"}:</h4>
+        <p>(843) 846-2230 20 Island Tank Rd Beaufort, South Carolina(SC).</p>
+        <h4 className='text-danger'>Email:</h4>
+        <p>example@mail.com</p>
+       </Col>
+       <Col lg="7" className="d-flex align-items-center">
+         <form  className="contact__form w-100">
+           <Row className='mb-4'>
+             <Col lg="6" className="form-group">
+               <input
+                 className="form-control"
+                 id="name"
+                 name="name"
+                 placeholder="Name" 
+                 type="text"
+                 required 
+               />
+             </Col>
+             <Col lg="6" className="form-group">
+               <input
+                 className="form-control rounded-0"
+                 id="email"
+                 name="email"
+                 placeholder="Email"
+                 type="email" 
+                 required 
+               />
+             </Col>
+           </Row>
+           <textarea
+             className="form-control rounded-0"
+             id="message"
+             name="message"
+             placeholder="Message"
+             rows="5" 
+             required
+           ></textarea>
+           <br />
+           <Row>
+             <Col lg="12" className="form-group">
+               <button className="btn btn-outline-danger" type="submit"> 
+               Send Message
+               </button>
+             </Col>
+           </Row>
+         </form>
+       </Col>
+     </Row>
+   </Container>
+   <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.44637553993!2d49.77255940382213!3d40.39469399729952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1695755592459!5m2!1str!2saz"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+            />
         <FooterBike />
     </div>
   )

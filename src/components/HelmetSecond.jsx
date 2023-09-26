@@ -9,6 +9,7 @@ const HelmetSecond = () => {
     useEffect(()=>{
         Aos.init();
       },[])
+      
   return (
     <div className='hseconddark'>
         <div className="container py-5">

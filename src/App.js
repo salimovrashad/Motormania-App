@@ -17,6 +17,8 @@ import CheckOut from './pages/CheckOut'
 import SuccessPage from './pages/SuccessPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ContactUs from './pages/ContactUs'
+import Wishlist from './pages/Wishlist'
+import { WishlistProvider } from 'react-use-wishlist'
 
 
 const Main = () => {
@@ -38,6 +40,7 @@ const Main = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/success' element={<SuccessPage />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
+        <Route path='/wishlist' element={<Wishlist />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>
         <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
@@ -53,9 +56,11 @@ const App = () => {
       <BrowserRouter>
       <LangProvider>
       <ModeProvider>
+        <WishlistProvider>
         <CartProvider>
           <Main />
         </CartProvider>
+        </WishlistProvider>
       </ModeProvider>
       </LangProvider>
       </BrowserRouter>

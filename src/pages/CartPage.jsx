@@ -1,18 +1,19 @@
 import { Button } from 'react-bootstrap';
-import React from 'react'
+import React, { useContext } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useCart } from 'react-use-cart'
 import CollapsibleExample from '../components/CollapsibleExample';
 import { Link } from 'react-router-dom';
+import { LangContext } from '../context/LangContext';
 
 const CartPage = () => {
-
+    const [lang] = useContext(LangContext);
     const { items, updateItemQuantity, removeItem, isEmpty,cartTotal,emptyCart } = useCart();
 
     return (
         <>
             <CollapsibleExample />
-            {isEmpty ? <h1 className='text-center text-danger'>No Product</h1> : <Container >
+            {isEmpty ? <h1 className='text-center text-danger'>{lang === "en"?"No Product":"Məhsul Yoxdur"}</h1> : <Container >
                 <Row>
                     <Col sm={12} md={9}>
                         <table class="table">

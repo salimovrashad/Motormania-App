@@ -10,6 +10,7 @@ import { ModeContext } from "../context/ModeContext";
 import { LangContext } from "../context/LangContext";
 import { useCart } from "react-use-cart";
 import { useSelector } from "react-redux";
+import { BsMoonFill, BsFillSunFill } from "react-icons/bs";
 
 function CollapsibleExample() {
   const [mode, setMode] = useContext(ModeContext);
@@ -49,15 +50,15 @@ function CollapsibleExample() {
                     {totalItems}
                     </span>
               </Link>
-              <Button variant="danger me-2" onClick={() => {
+              <Button className="pt-0" variant="danger me-2" onClick={() => {
                 mode === 'light' ?setMode('dark'):setMode('light');
                 mode === 'light' ?localStorage.setItem('mode','dark'):localStorage.setItem('mode','light');
-              }}>{mode==='light'?"DARK":"LIGHT"}</Button>
-              <Button variant="danger px-3 me-2" onClick={() => {
+              }}>{mode==='light'? <BsMoonFill /> :<BsFillSunFill />}</Button>
+              <Button variant="danger py-1 me-2" onClick={() => {
                 lang === 'az' ?setLang('en'):setLang('az');
                 lang === 'az' ?localStorage.setItem('lang','en'):localStorage.setItem('lang','az');
               }}>{lang === 'az'?'EN':'AZ'}</Button>
-            <Button variant="danger px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <Button variant="danger px-3 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <FaSistrix />
             </Button>
             <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
