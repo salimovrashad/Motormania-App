@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUserAlt, FaSistrix } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { ModeContext } from "../context/ModeContext";
@@ -41,7 +41,7 @@ function CollapsibleExample() {
             </Nav>
             <Nav>
             <div>
-              {localStorage.getItem('active') === 'true' ? <div className="btn">user@user.com</div> : <Link className="btn" to="/login">
+              {localStorage.getItem('active') === 'user@user.com' ? <div className="btn">user@user.com</div> : localStorage.getItem('active') === 'admin@admin.com' ? <Link to='/admin' className="btn">admin@admin.com</Link> : <Link className="btn" to="/login">
               <FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>}
 
               <Link to="/cart"  className="btn border-danger position-relative me-3">

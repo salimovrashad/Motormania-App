@@ -26,7 +26,7 @@ const FooterBike = () => {
         </ul>
       </div>
       <div className="col-6 col-md-2 mb-3">
-        <h3>Useful Links</h3>
+        <h3>{lang === "en"?"Useful Links":"Faydalı Linklər"}</h3>
         <ul className="nav flex-column">
           <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Home":"Ana Səhifə"}</a></li>
           <li className="nav-item mb-2"><a href="/" className="p-0 text-light">{lang === "en"?"Features":"Cəhətlər"}</a></li>

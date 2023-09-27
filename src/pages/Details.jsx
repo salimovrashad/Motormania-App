@@ -17,7 +17,6 @@ const Details = () => {
   return (
     <>
     <CollapsibleExample />
-    {/* <h1>{productdetails.title}, {productdetails.image}, {productdetails.image1}, {productdetails.image2}, {productdetails.image3}</h1> */}
     <div className="container col-xxl-10 px-4">
   <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div className="col-10 col-sm-8 col-lg-6">

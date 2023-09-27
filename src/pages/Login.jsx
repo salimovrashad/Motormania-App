@@ -18,7 +18,6 @@ const user = {
 
 function Login() {
     const [signIn, toggle] = React.useState(true);
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -42,7 +41,7 @@ function Login() {
                     color: "success"
                 })
                 navigate('/admin');
-                localStorage.setItem('active','true');
+                localStorage.setItem('active', admin.email);
                 window.location.reload();
             } else {
                 setMsg({
@@ -56,7 +55,7 @@ function Login() {
                     color: "success"
                 })
                 navigate('/shop');
-                localStorage.setItem('active','true');
+                localStorage.setItem('active',user.email);
                 window.location.reload();
             } else {
                 setMsg({

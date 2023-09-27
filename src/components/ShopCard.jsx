@@ -10,7 +10,7 @@ import { useWishlist } from 'react-use-wishlist';
 
 const ShopCard = ({image,name,price,id,alldata}) => {
     const [lang] = useContext(LangContext);
-    const { addWishlistItem, isWishlistEmpty, removeWishlistItem } = useWishlist();
+    const { addWishlistItem, isWishlistEmpty, items, removeWishlistItem } = useWishlist();
     const { addItem } = useCart();
     const notify1 = () => toast.success('Product added', {
         position: "bottom-right",
@@ -37,7 +37,7 @@ const ShopCard = ({image,name,price,id,alldata}) => {
     <Col sm={12} md={3}>
         <div className="card darkcard border" style={{width: '19rem'}}>
   <div className="card-body">
-      <div key={id} className='d-flex flex-row-reverse'><Button onClick={() => isWishlistEmpty ? notify1(addWishlistItem(alldata)): notify2(removeWishlistItem(id))} variant='none'><AiOutlineHeart className='fs-4'/></Button></div>
+      <div key={id} className='d-flex flex-row-reverse'><Button onClick={() => id = items.id ? notify2(removeWishlistItem(id)) : notify1(addWishlistItem(alldata))} variant='none'><AiOutlineHeart className='fs-4'/></Button></div>
   <img src={image} className="card-img-top" alt="..." />
     <h5 className="card-title">{name}</h5>
     <p className="card-text">{price} $</p>
