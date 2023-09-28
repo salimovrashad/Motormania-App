@@ -178,7 +178,14 @@ const CheckOut = () => {
             </div>
           </div>
           <hr className="my-4" />
-          <Link to={localStorage.getItem('active') === 'true' ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
+          <Link onClick={() => {
+                  window.scroll({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                  });
+                }}
+             to={localStorage.getItem('active') === 'user@user.com' ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
         </form>
       </div>
     </div>

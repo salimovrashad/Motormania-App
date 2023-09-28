@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import configureStore from './manager/store/configureStore';
 import { getMotosFromDatabase } from './manager/actions/motoAction';
 import photo from './images/Spinner-1s-64px.gif'
+import { getBlogsFromDatabase } from './manager/actions/blogAction';
 
 const mystore = configureStore();
 
@@ -26,4 +27,7 @@ ReactDOM.render(<div className='center'><img src={photo} alt="" /></div>, docume
 
 mystore.dispatch(getMotosFromDatabase()).then(() => {
     ReactDOM.render(result, document.getElementById('root'));
+})
+mystore.dispatch(getBlogsFromDatabase()).then(() => {
+  ReactDOM.render(result, document.getElementById('root'));
 })

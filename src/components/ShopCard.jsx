@@ -3,16 +3,16 @@ import { Button, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useCart } from 'react-use-cart'
 import { ToastContainer, toast } from 'react-toastify';
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import 'react-toastify/dist/ReactToastify.css';
 import { LangContext } from '../context/LangContext';
 import { useWishlist } from 'react-use-wishlist';
 
 const ShopCard = ({image,name,price,id,alldata}) => {
     const [lang] = useContext(LangContext);
-    const { addWishlistItem, isWishlistEmpty, items, removeWishlistItem } = useWishlist();
+    const { addWishlistItem, inWishlist, removeWishlistItem } = useWishlist();
     const { addItem } = useCart();
-    const notify1 = () => toast.success('Product added', {
+    const notify1 = () => toast.success('Product added to cart', {
         position: "bottom-right",
         autoClose: 400,
         hideProgressBar: true,
@@ -22,6 +22,16 @@ const ShopCard = ({image,name,price,id,alldata}) => {
         progress: undefined,
         theme: "dark",
         });
+    const notify3 = () => toast.success('Product added to wishlist', {
+      position: "bottom-right",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
     const notify2 = () => toast.success('Product removed', {
         position: "bottom-right",
         autoClose: 500,
@@ -33,11 +43,21 @@ const ShopCard = ({image,name,price,id,alldata}) => {
         theme: "dark",
         });
 
+        const handleWishlistToggle = () => {
+          if (inWishlist(id)) {
+            removeWishlistItem(id);
+            notify2();
+          } else {
+            addWishlistItem(alldata);
+            notify3();
+          }
+        };
+
   return (
     <Col sm={12} md={3}>
         <div className="card darkcard border" style={{width: '19rem'}}>
   <div className="card-body">
-      <div key={id} className='d-flex flex-row-reverse'><Button onClick={() => id = items.id ? notify2(removeWishlistItem(id)) : notify1(addWishlistItem(alldata))} variant='none'><AiOutlineHeart className='fs-4'/></Button></div>
+      <div key={id} className='d-flex flex-row-reverse'><div className='cursor p-1' onClick={handleWishlistToggle}>{inWishlist(id) ? <AiFillHeart className='fs-4 text-danger'/> : <AiOutlineHeart className='fs-4'/>}</div></div>
   <img src={image} className="card-img-top" alt="..." />
     <h5 className="card-title">{name}</h5>
     <p className="card-text">{price} $</p>

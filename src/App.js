@@ -19,6 +19,9 @@ import NotFoundPage from './pages/NotFoundPage'
 import ContactUs from './pages/ContactUs'
 import Wishlist from './pages/Wishlist'
 import { WishlistProvider } from 'react-use-wishlist'
+import BlogAdmin from './pages/admin/BlogAdmin'
+import AddBlog from './pages/admin/update/AddBlog'
+import EditBlog from './pages/admin/update/EditBlog'
 
 
 const Main = () => {
@@ -39,10 +42,13 @@ const Main = () => {
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/success' element={<SuccessPage />}></Route>
-        <Route path='/admin' element={<Admin />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>
+        <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>
         <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
+        <Route path='/blogadmin' element={<BlogAdmin />}></Route>
+        <Route path='/blogadmin/add' element={<AddBlog />}></Route>
+        <Route path='/blogadmin/edit/:id' element={<EditBlog />}></Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>
       </div>

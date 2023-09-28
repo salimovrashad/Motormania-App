@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUserAlt, FaSistrix } from "react-icons/fa";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { ModeContext } from "../context/ModeContext";
@@ -16,9 +16,13 @@ function CollapsibleExample() {
   const [mode, setMode] = useContext(ModeContext);
   const [lang, setLang] = useContext(LangContext);
   const {totalItems} = useCart();
-
+  const handleExit = () => {
+    localStorage.setItem('active', false);
+    window.location.reload();
+  };
   const [query, setQuery] = useState(null);
   const motos = useSelector(p=>p.mr);
+  
   return (
     <>
       <Navbar
@@ -34,15 +38,28 @@ function CollapsibleExample() {
               alt="/"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-around">
             <Nav className="w-50 d-flex justify-content-center">
             
             </Nav>
             <Nav>
             <div>
-              {localStorage.getItem('active') === 'user@user.com' ? <div className="btn">user@user.com</div> : localStorage.getItem('active') === 'admin@admin.com' ? <Link to='/admin' className="btn">admin@admin.com</Link> : <Link className="btn" to="/login">
-              <FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>}
+            <Link className="btn" to="/blogadmin"><FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>
+              {localStorage.getItem('active') === 'user@user.com' ? 
+              <>
+                <div className="btn">user@user.com</div>
+                <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
+              </> 
+              : 
+              localStorage.getItem('active') === 'admin@admin.com' ? 
+              <>
+                <Link to='/admin' className="btn">admin@admin.com</Link>
+                <button className="btn btn-outline-danger me-2" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
+              </> 
+              : 
+              <Link className="btn" to="/login"><FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>
+              }
 
               <Link to="/cart"  className="btn border-danger position-relative me-3">
                     <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
