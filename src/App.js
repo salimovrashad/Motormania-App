@@ -1,3 +1,4 @@
+// This Project is https://github.com/salimovrashad
 import React, { useContext } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Headbg from './components/Headbg'
@@ -22,6 +23,7 @@ import { WishlistProvider } from 'react-use-wishlist'
 import BlogAdmin from './pages/admin/BlogAdmin'
 import AddBlog from './pages/admin/update/AddBlog'
 import EditBlog from './pages/admin/update/EditBlog'
+import BlogDetails from './pages/BlogDetails'
 
 
 const Main = () => {
@@ -40,6 +42,7 @@ const Main = () => {
         <Route path='/contactus' element={<ContactUs />}></Route>
         <Route path='/checkout' element={<CheckOut />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/blog/:url' element={<BlogDetails />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/success' element={<SuccessPage />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>

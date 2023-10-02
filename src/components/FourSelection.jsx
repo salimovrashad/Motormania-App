@@ -11,7 +11,7 @@ const FourSelection = () => {
 
   return (
     <div className='d-flex justify-content-center align-center flex-wrap py-5 fourbg'>
-        <div className="card my-3 mx-4 bckcard" style={{width: 250}}>
+        <div className="card my-3 mx-4 bckcard" style={{width: 270}}>
             <div className="row g-0">
                 <div className="col-md-4 display-4 px-3">
                     <FaShippingFast />
@@ -25,7 +25,7 @@ const FourSelection = () => {
             </div>
         </div>
 
-        <div className="card my-3 mx-4 bckcard" style={{width: 250}}>
+        <div className="card my-3 mx-4 bckcard" style={{width: 270}}>
             <div className="row g-0">
                 <div className="col-md-4 display-4 px-3">
                     <BiSupport />
@@ -39,7 +39,7 @@ const FourSelection = () => {
             </div>
         </div>
 
-        <div className="card my-3 mx-4 bckcard" style={{width: 250}}>
+        <div className="card my-3 mx-4 bckcard" style={{width: 270}}>
             <div className="row g-0">
                 <div className="col-md-4 display-4 px-3">
                     <AiFillSafetyCertificate />
@@ -53,7 +53,7 @@ const FourSelection = () => {
             </div>
         </div>
 
-        <div className="card my-3 mx-4 bckcard" style={{width: 250}}>
+        <div className="card my-3 mx-4 bckcard" style={{width: 270}}>
             <div className="row g-0">
                 <div className="col-md-4 display-4 px-3">
                     <MdLocalOffer />

@@ -32,7 +32,7 @@ const ShopCard = ({image,name,price,id,alldata}) => {
       progress: undefined,
       theme: "dark",
       });
-    const notify2 = () => toast.success('Product removed', {
+    const notify2 = () => toast.error('Product removed', {
         position: "bottom-right",
         autoClose: 500,
         hideProgressBar: true,

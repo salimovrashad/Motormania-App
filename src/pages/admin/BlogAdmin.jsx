@@ -11,7 +11,8 @@ function BlogAdmin() {
   return (
    <Container className='py-5'>
     <Link className="btn btn-danger my-4 me-2" to="/about">About</Link>        
-    <Link className="btn btn-danger my-4" to="/blogadmin/add">Add Blog</Link>  
+    <Link className="btn btn-danger my-4 me-2" to="/blogadmin/add">Add Blog</Link>  
+    <Link className="btn btn-danger my-4" to="/admin">Product Admin</Link>
         <Col md={12}>
         <Table className='table-dark' bordered='1px' hover>
       <thead>

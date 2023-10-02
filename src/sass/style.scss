@@ -1,5 +1,16 @@
+// This Project is https://github.com/salimovrashad
 .font *{
     font-family: Oswald;
+}
+.slick-arrow{
+    display: none !important;
+}
+.modal-backdrop{
+    display: none;
+}
+.modal-open{
+    overflow: visible !important;
+    padding: 0 !important;
 }
 li *{
     text-decoration: none;
@@ -87,3 +98,11 @@ li *{
         width: 250px;
     }
   }
+
+@media only screen and (max-width: 995px) {
+
+    .table>:not(caption)>*>*{
+        padding: 0 !important;
+    }
+    
+}

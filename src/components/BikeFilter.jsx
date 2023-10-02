@@ -53,7 +53,14 @@ export default function BikeFilter() {
       <div className="container py-5">
         <div className='d-flex justify-content-between pb-5'>
                     <h1 className="display-5 fw-bold">{lang === "en"?"Popular Bikes":"Məşhur Motosikletlər"}</h1>
-                    <Link to="/shop"><button className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
+                    <Link to="/shop"><button onClick={() => {
+                                      window.scroll({
+                                        top: 0,
+                                        left: 0,
+                                        behavior: "smooth",
+                                      });
+                                      }}
+                      className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
                 </div>
         <Slider {...settings}>
           {catData.map(item=>(

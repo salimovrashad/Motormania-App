@@ -40,7 +40,7 @@ function Login() {
                     text: "Login successfully",
                     color: "success"
                 })
-                navigate('/admin');
+                navigate('/home');
                 localStorage.setItem('active', admin.email);
                 window.location.reload();
             } else {

@@ -30,7 +30,7 @@ const CartPage = () => {
                             <tbody>
                                 {items.map((item, count) => (
                                     <tr>
-                                        <th scope="row">{count + 1}</th>
+                                        <th scope="row p-0">{count + 1}</th>
                                         <td><img src={item.image} width={100} alt="" /></td>
                                         <td>{item.name}</td>
                                         <td>{item.price * item.quantity}$</td>

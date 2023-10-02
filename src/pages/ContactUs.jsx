@@ -34,7 +34,7 @@ const ContactUs = () => {
         <h4 className='text-danger'>{lang === "en"?"Address":"Ünvan"}:</h4>
         <p>(843) 846-2230 20 Island Tank Rd Beaufort, South Carolina(SC).</p>
         <h4 className='text-danger'>Email:</h4>
-        <p>example@mail.com</p>
+        <p>motormania@mail.com</p>
        </Col>
        <Col lg="7" className="d-flex align-items-center">
          <form  className="contact__form w-100">
@@ -72,7 +72,7 @@ const ContactUs = () => {
            <Row>
              <Col lg="12" className="form-group">
                <button className="btn btn-outline-danger" type="submit"> 
-               Send Message
+               {lang === "en"?"Send Message":"Mesaj Göndər"}
                </button>
              </Col>
            </Row>
@@ -82,6 +82,7 @@ const ContactUs = () => {
    </Container>
    <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.44637553993!2d49.77255940382213!3d40.39469399729952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2zQmFrw7w!5e0!3m2!1str!2saz!4v1695755592459!5m2!1str!2saz"
+              title='map'
               width="100%"
               height="450"
               style={{ border: 0 }}

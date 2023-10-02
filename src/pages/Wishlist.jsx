@@ -16,7 +16,7 @@ const Wishlist = () => {
       return (
           <>
           <CollapsibleExample />
-        <h1 className='text-center py-3'>Wishlist ({totalWishlistItems})</h1>
+        <h1 className='text-center py-3'>{lang === "en"?"Wishlist":"Favorilər"} ({totalWishlistItems})</h1>
   
         <ul class="list-group container">
           {items.map((item) => (

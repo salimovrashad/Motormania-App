@@ -52,10 +52,17 @@ export default function BikeFilter() {
     };
     return (
       <div className="container py-5">
-        <div className='d-flex justify-content-between pb-5'>
+         <div className='d-flex justify-content-between pb-5'>
                     <h1 className="display-5 fw-bold">{lang === "en"?"Bike Helmet":"Motosiklet Dəbilqələri"}</h1>
-                    <Link to="/shop"><button className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
-                </div>
+                    <Link to="/shop"><button onClick={() => {
+                                      window.scroll({
+                                        top: 0,
+                                        left: 0,
+                                        behavior: "smooth",
+                                      });
+                                      }}
+                      className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
+         </div>
         <Slider {...settings}>
           {catData.map(item=>(
               <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
