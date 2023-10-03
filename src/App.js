@@ -24,6 +24,7 @@ import BlogAdmin from './pages/admin/BlogAdmin'
 import AddBlog from './pages/admin/update/AddBlog'
 import EditBlog from './pages/admin/update/EditBlog'
 import BlogDetails from './pages/BlogDetails'
+import Faqpage from './pages/Faqpage'
 
 
 const Main = () => {
@@ -46,6 +47,7 @@ const Main = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/success' element={<SuccessPage />}></Route>
         <Route path='/wishlist' element={<Wishlist />}></Route>
+        <Route path='/faqpage' element={<Faqpage />}></Route>
         <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/add' element={<AddMoto />}></Route>
         <Route path='/admin/edit/:id' element={<EditMoto />}></Route>

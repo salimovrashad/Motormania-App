@@ -30,7 +30,7 @@ const ContactUs = () => {
      </Row>
      <Row className="sec_sp">
        <Col lg="5" className="mb-5">
-         <h3>Əlaqə Vasitələri:</h3>
+         <h3>{lang === "en"?"Contact":"Əlaqə Vasitələri"}:</h3>
         <h4 className='text-danger'>{lang === "en"?"Address":"Ünvan"}:</h4>
         <p>(843) 846-2230 20 Island Tank Rd Beaufort, South Carolina(SC).</p>
         <h4 className='text-danger'>Email:</h4>

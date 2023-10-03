@@ -88,13 +88,13 @@ function CollapsibleExample(id) {
               <div className="modal-dialog">
                 <div className="modal-content border-2 border-danger">
                   <div className="modal-header border-danger">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Search</h1>
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">{lang === "en"?"Search":"Axtarış"}</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                   </div>
                   <div className="modal-body">
                     <form className="input-group mb-3">
                       <input onChange={e => setQuery(e.target.value)} type="text" className="form-control" placeholder="Enter product name" aria-label="Enter product name" aria-describedby="button-addon2" />
-                      <button onClick={handleClick} className="btn btn-outline-danger" type="submit" id="button-addon2">Search</button>
+                      <button onClick={handleClick} className="btn btn-outline-danger" type="submit" id="button-addon2">{lang === "en"?"Search":"Axtarış"}</button>
                     </form>
                     
                     <ul className="list-group">

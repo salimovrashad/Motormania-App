@@ -12,6 +12,7 @@ const MotoForm = ({sendData,editmoto}) => {
     const [type,setType] = useState(editmoto?editmoto.type:"");
     const [name,setName] = useState(editmoto?editmoto.name:"");
     const [describtion,setDescribtion] = useState(editmoto?editmoto.describtion:"");
+    const [describtionaz,setDescribtionaz] = useState(editmoto?editmoto.describtionaz:"");
     const [price,setPrice] = useState(editmoto?editmoto.price:"");
     const motoFormSubmit =e=>{
         e.preventDefault();
@@ -22,6 +23,7 @@ const MotoForm = ({sendData,editmoto}) => {
             image3:image3,
             name:name,
             describtion:describtion,
+            describtionaz:describtionaz,
             price:price,
             type:type,
         })
@@ -58,8 +60,13 @@ const MotoForm = ({sendData,editmoto}) => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" >
-                        <Form.Label>Describtion</Form.Label>
+                        <Form.Label>Describtion-en</Form.Label>
                         <Form.Control value={describtion} onChange={e=>setDescribtion(e.target.value)} type="text" placeholder="Enter describtion" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" >
+                        <Form.Label>Describtion-az</Form.Label>
+                        <Form.Control value={describtionaz} onChange={e=>setDescribtionaz(e.target.value)} type="text" placeholder="Enter describtionaz" />
                     </Form.Group>
         
                     <Form.Group className="mb-3" >

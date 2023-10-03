@@ -7,8 +7,8 @@ export const addMoto = (moto)=>({
 
 export const addMotoToDatabase = (motoData={})=>{
   return (dispatch) => {
-    const { image='', image1='', image2='', image3='', name='', describtion='', price='', type='' } = motoData;
-    const moto = {image,image1,image2,image3,name,describtion,price,type};
+    const { image='', image1='', image2='', image3='', name='', describtion='',describtionaz='', price='', type='' } = motoData;
+    const moto = {image,image1,image2,image3,name,describtion,describtionaz,price,type};
 
     database.ref("motos").push(moto).then((res) => {
         dispatch(addMoto({

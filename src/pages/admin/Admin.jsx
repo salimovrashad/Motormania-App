@@ -25,7 +25,8 @@ function Admin() {
           <th>Photo3</th>
           <th>Type</th>
           <th>Name</th>
-          <th>describtion</th>
+          <th>Describtion</th>
+          <th>Describtion-Az</th>
           <th>Price</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -42,6 +43,7 @@ function Admin() {
           <td>{item.type}</td>
           <td>{item.name}</td>
           <td>{item.describtion}</td>
+          <td>{item.describtionaz}</td>
           <td>{item.price} $</td>
           <td><Link className='btn btn-warning' to={`/admin/edit/${item.id}`}>Edit</Link></td>
           <td><Button onClick={()=>{dispatch(removeMotoFromDatabase(item.id))}} variant='danger'>X</Button></td>

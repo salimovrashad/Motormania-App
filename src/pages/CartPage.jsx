@@ -5,6 +5,7 @@ import { useCart } from 'react-use-cart'
 import CollapsibleExample from '../components/CollapsibleExample';
 import { Link } from 'react-router-dom';
 import { LangContext } from '../context/LangContext';
+import FooterBike from '../components/FooterBike';
 
 const CartPage = () => {
     const [lang] = useContext(LangContext);
@@ -13,7 +14,10 @@ const CartPage = () => {
     return (
         <>
             <CollapsibleExample />
-            {isEmpty ? <h1 className='text-center text-danger'>{lang === "en"?"No Product":"Məhsul Yoxdur"}</h1> : <Container >
+            {isEmpty ? <div className='text-center mt-3'><h1 className='text-danger'>{lang === "en"?"No Product":"Məhsul Yoxdur"}</h1>
+            <img src="https://cdnl.iconscout.com/lottie/premium/thumb/shopping-bag-6866084-5624247.gif" alt="" /> </div>
+            : 
+            <Container >
                 <Row>
                     <Col sm={12} md={9}>
                         <table class="table">
@@ -58,6 +62,7 @@ const CartPage = () => {
                     </Col>
                 </Row>
             </Container>}
+            <FooterBike />
         </>
     )
 }

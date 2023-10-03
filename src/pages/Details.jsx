@@ -30,7 +30,7 @@ const Details = () => {
     </div>
     <div className="col-lg-6">
       <h1 className="display-5 fw-bold lh-1 mb-3">{productdetails.name}</h1>
-      <p className="lead">{productdetails.describtion}</p>
+      <p className="lead">{lang === "en" ? productdetails.describtion : productdetails.describtionaz }</p>
       <p className='lead'>{productdetails.price} $</p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-start">
         <Button onClick={() => { (addItem(productdetails)) }} type="button" className="btn btn-danger btn-lg px-4 me-md-2">{lang === "en"?"Add To Cart":"Səbətə Əlavə Et"}</Button>
