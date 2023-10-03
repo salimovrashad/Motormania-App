@@ -6,7 +6,7 @@ import CollapsibleExample from '../components/CollapsibleExample';
 import { Link } from 'react-router-dom';
 import { LangContext } from '../context/LangContext';
 import FooterBike from '../components/FooterBike';
-
+// adw
 const CartPage = () => {
     const [lang] = useContext(LangContext);
     const { items, updateItemQuantity, removeItem, isEmpty,cartTotal,emptyCart } = useCart();
