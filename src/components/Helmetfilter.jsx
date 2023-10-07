@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ShopCard from './ShopCard';
 
+
 export default function BikeFilter() {
   const [lang] = useContext(LangContext);
   const motos = useSelector(p=>p.mr);
   const catData = motos.filter(p=>p.type === "Helmets");
 
-
     const settings = {
-      infinite: true,
+      infinite: false,
       dots: true,
       speed: 1000,
       slidesToShow: 4,

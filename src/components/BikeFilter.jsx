@@ -4,8 +4,9 @@ import Slider from 'react-slick';
 import '../../node_modules/slick-carousel/slick/slick.css'
 import '../../node_modules/slick-carousel/slick/slick-theme.css'
 import { Link } from 'react-router-dom';
-import ShopCard from './ShopCard';
 import { useSelector } from 'react-redux';
+import ShopCard from './ShopCard';
+
 
 export default function BikeFilter() {
   const [lang] = useContext(LangContext);
@@ -13,7 +14,7 @@ export default function BikeFilter() {
   const catData = motos.filter(p=>p.type === "Bikes");
 
     const settings = {
-      infinite: true,
+      infinite: false,
       dots: true,
       speed: 1000,
       slidesToShow: 4,
@@ -51,8 +52,8 @@ export default function BikeFilter() {
     };
     return (
       <div className="container py-5">
-        <div className='d-flex justify-content-between pb-5'>
-                    <h1 className="display-5 fw-bold">{lang === "en"?"Popular Bikes":"Məşhur Motosikletlər"}</h1>
+         <div className='d-flex justify-content-between pb-5'>
+                    <h1 className="display-5 fw-bold">{lang === "en"?"Bike Helmet":"Motosiklet Dəbilqələri"}</h1>
                     <Link to="/shop"><button onClick={() => {
                                       window.scroll({
                                         top: 0,
@@ -61,7 +62,7 @@ export default function BikeFilter() {
                                       });
                                       }}
                       className='btn btn-outline-danger px-5 py-2 rounded-pill'>{lang === "en"?"Shop Now":"Alış-veriş et"}</button></Link>
-                </div>
+         </div>
         <Slider {...settings}>
           {catData.map(item=>(
               <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
