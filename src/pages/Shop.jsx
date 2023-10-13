@@ -53,6 +53,9 @@ const Shop = () => {
             <div className="nav-link cursor" onClick={()=>{handleClick("Bikes")}}>{lang === "en"?"BİKES":"Motosikletlər"}</div>
           </li>
           <li className="nav-item">
+            <div className="nav-link cursor" onClick={()=>{handleClick("Tires")}}>{lang === "en"?"TİRES":"Təkərlər"}</div>
+          </li>
+          <li className="nav-item">
             <div className="nav-link cursor" onClick={()=>{handleClick("Gloves")}}>{lang === "en"?"GLOVES":"Əlcəklər"}</div>
           </li>
           <li className="nav-item">

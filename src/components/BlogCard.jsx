@@ -6,10 +6,8 @@ const BlogCard = ({ image, name, describtion, id }) => {
         <div className="col-md-12">
             <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div className="col p-4 d-flex flex-column position-static">
-                    <strong className="d-inline-block mb-2 text-primary-emphasis">{name}</strong>
-                    <h3 className="mb-0">{describtion}</h3>
-                    <div className="mb-1 text-body-secondary">Nov 12</div>
-                    <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    <h3 className="mb-2">{name}</h3>
+                    <p className="card-text mb-auto text-size" >{describtion}</p>
                     <Link to={`/blog/${id}`}><a href='/' className="btn btn-outline-danger" onClick={() => {
                         window.scroll({
                             top: 0,

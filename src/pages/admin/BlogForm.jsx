@@ -8,12 +8,14 @@ const BlogForm = ({sendData,editblog}) => {
     const [image,setPhoto] = useState(editblog?editblog.image:"");
     const [name,setName] = useState(editblog?editblog.name:"");
     const [describtion,setDescribtion] = useState(editblog?editblog.describtion:"");
+    const [shortdes,setShortdes] = useState(editblog?editblog.shortdes:"");
     const blogFormSubmit =e=>{
         e.preventDefault();
         sendData({
             image:image,
             name:name,
             describtion:describtion,
+            shortdes:shortdes
         })
     }
     return (
@@ -28,6 +30,11 @@ const BlogForm = ({sendData,editblog}) => {
                     <Form.Group className="mb-3" >
                         <Form.Label>Name</Form.Label>
                         <Form.Control value={name} onChange={e=>setName(e.target.value)} type="text" placeholder="Enter name" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" >
+                        <Form.Label>ShortDes</Form.Label>
+                        <Form.Control value={shortdes} onChange={e=>setShortdes(e.target.value)} type="text" placeholder="Enter name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" >

@@ -3,9 +3,12 @@ import { LangContext } from '../context/LangContext';
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import CollapsibleExample from '../components/CollapsibleExample';
 import FooterBike from '../components/FooterBike';
+import BlogCard from '../components/BlogCard';
+import { useSelector } from 'react-redux';
 
 const Blog = () => {
 const [lang] = useContext(LangContext);
+const blogs = useSelector(p => p.br);
 
   return (
     <>
@@ -27,44 +30,40 @@ const [lang] = useContext(LangContext);
 
     <main className="container py-5">
   <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-    <div className="col-lg-6 px-0">
-      <h1 className="display-4 fst-italic">Title of a longer featured blog post</h1>
-      <p className="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p className="lead mb-0"><a href="/" className="text-body-emphasis fw-bold">Continue reading...</a></p>
+    <div className="col-lg-12 px-0">
+      <img src="https://t3.ftcdn.net/jpg/02/76/70/70/360_F_276707060_WpP9bwHWv0Wdqqn0pEgtSuIgXUvgkbs7.jpg" width="100%" height={300} alt="" srcset="" />
     </div>
   </div>
   <div className="row mb-2">
     <div className="col-md-6">
       <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div className="col p-4 d-flex flex-column position-static">
-          <strong className="d-inline-block mb-2 text-primary-emphasis">World</strong>
-          <h3 className="mb-0">Featured post</h3>
-          <div className="mb-1 text-body-secondary">Nov 12</div>
-          <p className="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <h3 className="mb-0">
+            Honda's new E-Clutch system to welcome beginners with clutchless shifting</h3>
+          <p className="mb-auto mt-3 text-danger">Dustin Wheelen</p>
           <a href="/" className="icon-link gap-1 icon-link-hover stretched-link">
             Continue reading
             <svg className="bi"><use xlinkHref="#chevron-right" /></svg>
           </a>
         </div>
         <div className="col-auto d-none d-lg-block">
-          <svg className="bd-placeholder-img" width={200} height={250} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <img alt='' src='https://www.revzilla.com/blog_content_image/image/91082/redline_hero/honda_e_clutch_cover.jpg' className="bd-placeholder-img" width={250} height={250}focusable="false"></img>
         </div>
       </div>
     </div>
     <div className="col-md-6">
       <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div className="col p-4 d-flex flex-column position-static">
-          <strong className="d-inline-block mb-2 text-success-emphasis">Design</strong>
-          <h3 className="mb-0">Post title</h3>
-          <div className="mb-1 text-body-secondary">Nov 11</div>
-          <p className="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <h3 className="mb-0">Father and son, coast to coast: The incidental sport-touring comparo</h3>
+          <p className="mb-auto mt-3 text-danger">Michael Megliola</p>
           <a href="/" className="icon-link gap-1 icon-link-hover stretched-link">
             Continue reading
             <svg className="bi"><use xlinkHref="#chevron-right" /></svg>
           </a>
         </div>
         <div className="col-auto d-none d-lg-block">
-          <svg className="bd-placeholder-img" width={200} height={250} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        <img alt='' src='https://www.revzilla.com/blog_content_image/image/91026/redline_hero/VFR_ADV_hero.jpg' className="bd-placeholder-img" width={250} height={250}focusable="false"></img>
+
         </div>
       </div>
     </div>
@@ -72,120 +71,18 @@ const [lang] = useContext(LangContext);
   <div className="row g-5">
     <div className="col-md-8">
       <h3 className="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
+        Blogs for Motorcycle
       </h3>
-      <article className="blog-post">
-        <h2 className="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-        <p className="blog-post-meta">January 1, 2021 by <a href="/">Mark</a></p>
-        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
-        <hr />
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h2>Blockquotes</h2>
-        <p>This is an example blockquote in action:</p>
-        <blockquote className="blockquote">
-          <p>Quoted text goes here.</p>
-        </blockquote>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Example lists</h3>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
-        <ul>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ul>
-        <p>And this is an ordered list:</p>
-        <ol>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ol>
-        <p>And this is a definition list:</p>
-        <dl>
-          <dt>HyperText Markup Language (HTML)</dt>
-          <dd>The language used to describe and define the content of a Web page</dd>
-          <dt>Cascading Style Sheets (CSS)</dt>
-          <dd>Used to describe the appearance of Web content</dd>
-          <dt>JavaScript (JS)</dt>
-          <dd>The programming language used to build advanced Web sites and applications</dd>
-        </dl>
-        <h2>Inline HTML elements</h2>
-        <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-        <ul>
-          <li><strong>To bold text</strong>, use <code className="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-          <li><em>To italicize text</em>, use <code className="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-          <li>Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <code className="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code className="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-          <li>Citations, like <cite>— Mark Otto</cite>, should use <code className="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-          <li><del>Deleted</del> text should use <code className="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code className="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-          <li>Superscript <sup>text</sup> uses <code className="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code className="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-        </ul>
-        <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-        <h2>Heading</h2>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Sub-heading</h3>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <pre><code>Example code block</code></pre>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-      <article className="blog-post">
-        <h2 className="display-5 link-body-emphasis mb-1">Another blog post</h2>
-        <p className="blog-post-meta">December 23, 2020 by <a href="/">Jacob</a></p>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <blockquote>
-          <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-        </blockquote>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alice</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>4</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Charlie</td>
-              <td>7</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Totals</td>
-              <td>21</td>
-              <td>23</td>
-            </tr>
-          </tfoot>
-        </table>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-      <article className="blog-post">
-        <h2 className="display-5 link-body-emphasis mb-1">New feature</h2>
-        <p className="blog-post-meta">December 14, 2020 by <a href="/">Chris</a></p>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <ul>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ul>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-      <nav className="blog-pagination" aria-label="Pagination">
-        <a className="btn btn-outline-primary rounded-pill" href="/">Older</a>
-        <a className="btn btn-outline-secondary rounded-pill disabled" href='/' aria-disabled="true">Newer</a>
-      </nav>
+
+
+      {blogs.map(item => (
+
+        <BlogCard image={item.image} name={item.name} describtion={item.describtion} id={item.id} shortdes={item.shortdes} />
+
+      ))}
+
+
+
     </div>
     <div className="col-md-4">
       <div className="position-sticky" style={{top: '2rem'}}>
@@ -198,7 +95,7 @@ const [lang] = useContext(LangContext);
           <ul className="list-unstyled">
             <li>
               <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/">
-                <svg className="bd-placeholder-img" width="100%" height={96} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+                <img alt='' src='https://www.motosiklethayattir.com/wp-content/uploads/2018/04/ivmeduyusu-768x461.jpg' className="bd-placeholder-img" width={160} height={96}  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"/>
                 <div className="col-lg-8">
                   <h6 className="mb-0">Example blog post title</h6>
                   <small className="text-body-secondary">January 15, 2023</small>
@@ -207,7 +104,7 @@ const [lang] = useContext(LangContext);
             </li>
             <li>
               <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/">
-                <svg className="bd-placeholder-img" width="100%" height={96} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+              <img alt='' src='https://www.motosiklethayattir.com/wp-content/uploads/2018/04/GazKullanimBecerisi.jpg' className="bd-placeholder-img" width={160} height={96}  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"/>
                 <div className="col-lg-8">
                   <h6 className="mb-0">This is another blog post title</h6>
                   <small className="text-body-secondary">January 14, 2023</small>
@@ -216,7 +113,7 @@ const [lang] = useContext(LangContext);
             </li>
             <li>
               <a className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/">
-                <svg className="bd-placeholder-img" width="100%" height={96} xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+              <img alt='' src='https://www.motosiklethayattir.com/wp-content/uploads/2018/04/MotosikletBaslangic.jpg' className="bd-placeholder-img" width={160} height={96}  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"/>
                 <div className="col-lg-8">
                   <h6 className="mb-0">Longer blog post title: This one has multiple lines!</h6>
                   <small className="text-body-secondary">January 13, 2023</small>

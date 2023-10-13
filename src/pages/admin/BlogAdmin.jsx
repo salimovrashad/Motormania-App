@@ -20,6 +20,7 @@ function BlogAdmin() {
           <th>#</th>
           <th>Photo</th>
           <th>Name</th>
+          <th>ShortDes</th>
           <th>Describtion</th>
           <th>Edit</th>
           <th>Remove</th>
@@ -31,6 +32,7 @@ function BlogAdmin() {
           <td>{count+1}</td>
           <td><img src={item.image} width={100} alt="" /></td>
           <td>{item.name}</td>
+          <td>{item.shortdes}</td>
           <td>{item.describtion}</td>
           <td><Link className='btn btn-warning' to={`/blogadmin/edit/${item.id}`}>Edit</Link></td>
           <td><Button onClick={()=>{dispatch(removeBlogFromDatabase(item.id))}} variant='danger'>X</Button></td>

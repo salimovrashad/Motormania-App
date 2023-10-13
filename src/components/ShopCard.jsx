@@ -58,8 +58,8 @@ const ShopCard = ({image,name,price,id,alldata}) => {
         <div className="card darkcard border" style={{width: '19rem'}}>
   <div className="card-body">
       <div key={id} className='d-flex flex-row-reverse'><div className='cursor p-1' onClick={handleWishlistToggle}>{inWishlist(id) ? <AiFillHeart className='fs-4 text-danger'/> : <AiOutlineHeart className='fs-4'/>}</div></div>
-  <img src={image} className="card-img-top" alt="..." />
-    <h5 className="card-title">{name}</h5>
+    <img src={image} className="card-img-top" alt="..." />
+    <h5 className="card-title text-size1">{name}</h5>
     <p className="card-text">{price} $</p>
     <Button className="btn btn-danger me-3" onClick={() => { notify1(addItem(alldata)) }}>{lang === "en"?"Add To Cart":"Səbətə Əlavə Et"}</Button>
     <Link to={`/shop/${id}`}><a href='/' className="btn btn-outline-danger" onClick={() => {
