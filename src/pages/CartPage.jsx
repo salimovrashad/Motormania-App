@@ -6,10 +6,10 @@ import CollapsibleExample from '../components/CollapsibleExample';
 import { Link } from 'react-router-dom';
 import { LangContext } from '../context/LangContext';
 import FooterBike from '../components/FooterBike';
-// adw
+
 const CartPage = () => {
     const [lang] = useContext(LangContext);
-    const { items, updateItemQuantity, removeItem, isEmpty,cartTotal,emptyCart } = useCart();
+    const { items, updateItemQuantity, removeItem, isEmpty, cartTotal, emptyCart } = useCart();
 
     return (
         <>
@@ -53,7 +53,7 @@ const CartPage = () => {
                     </Col>
                     <Col sm={12} md={3}>
                         <ul class="list-group">
-                            <li class="list-group-item"><h3>Total Pirce</h3></li>
+                            <li class="list-group-item"><h3>Total Price</h3></li>
                             <li class="list-group-item"><h4 className='text-warning'>{cartTotal}$</h4></li>
                             <li class="list-group-item"><Button onClick={()=>{emptyCart()}} variant='danger'>Clear cart</Button>
                             <Link to='/checkout'><Button variant='success ms-3'>Checkout</Button></Link></li>

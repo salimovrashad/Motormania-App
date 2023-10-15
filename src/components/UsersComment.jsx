@@ -8,7 +8,7 @@ export default function UsersComment() {
   const blogs = useSelector(p => p.br);
 
   const settings = {
-    infinite: true,
+    infinite: false,
     dots: true,
     speed: 1000,
     slidesToShow: 2,
