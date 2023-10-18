@@ -13,6 +13,7 @@ function Admin() {
     <Link className="btn btn-danger my-4 me-2" to="/shop">Shop</Link>        
     <Link className="btn btn-danger my-4 me-2" to="/admin/add">Add Product</Link> 
     <Link className="btn btn-danger my-4" to="/blogadmin">Blog Admin</Link>
+    <Link className="btn btn-danger my-4" to="/usersadmin">Users Admin</Link>
 
         <Col md={12}>
         <Table className='table-dark' bordered='1px' hover>
@@ -34,7 +35,7 @@ function Admin() {
       </thead>
       <tbody>
         {motos.map((item,count)=>(
-            <tr key={count}>
+        <tr key={count}>
           <td>{count+1}</td>
           <td><img src={item.image} width={100} alt="" /></td>
           <td><img src={item.image1} width={100} alt="" /></td>

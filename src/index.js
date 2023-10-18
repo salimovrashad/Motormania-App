@@ -12,6 +12,7 @@ import configureStore from './manager/store/configureStore';
 import { getMotosFromDatabase } from './manager/actions/motoAction';
 import photo from './images/Spinner-1s-64px.gif'
 import { getBlogsFromDatabase } from './manager/actions/blogAction';
+import { getUsersFromDatabase } from './manager/actions/loginAction';
 
 const mystore = configureStore();
 
@@ -30,5 +31,8 @@ mystore.dispatch(getMotosFromDatabase()).then(() => {
     ReactDOM.render(result, document.getElementById('root'));
 })
 mystore.dispatch(getBlogsFromDatabase()).then(() => {
+  ReactDOM.render(result, document.getElementById('root'));
+})
+mystore.dispatch(getUsersFromDatabase()).then(() => {
   ReactDOM.render(result, document.getElementById('root'));
 })

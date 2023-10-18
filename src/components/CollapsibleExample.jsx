@@ -56,6 +56,12 @@ function CollapsibleExample(id) {
               <>
                 <div className="btn">User</div>
                 <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
+                <Link to="/cart"  className="btn border-danger position-relative me-3">
+                    <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {totalItems}
+                    </span>
+              </Link>
               </> 
               : 
               localStorage.getItem('active') === 'admin@admin.com' ? 
@@ -64,15 +70,14 @@ function CollapsibleExample(id) {
                 <button className="btn btn-outline-danger me-2" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
               </> 
               : 
+              <>
               <Link className="btn" to="/login"><FaUserAlt className="text-danger"/>{lang === "en"?"Login Here":"Giriş"}</Link>
+              <Link className="btn" to="/signup"><FaUserAlt className="text-danger"/>{lang === "en"?"Sign Up":"Giriş"}</Link>
+              </>
               }
 
-              <Link to="/cart"  className="btn border-danger position-relative me-3">
-                    <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {totalItems}
-                    </span>
-              </Link>
+              
+              
               <Button className="pt-0" variant="danger me-2" onClick={() => {
                 mode === 'light' ?setMode('dark'):setMode('light');
                 mode === 'light' ?localStorage.setItem('mode','dark'):localStorage.setItem('mode','light');

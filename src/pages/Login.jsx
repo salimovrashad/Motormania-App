@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import * as Components from './Components';
 import { useNavigate } from "react-router-dom";
 import AdminNav from "../components/AdminNav";
+import { Container } from "react-bootstrap";
 
 
 const admin = {
@@ -17,7 +17,6 @@ const user = {
 
 
 function Login() {
-    const [signIn, toggle] = React.useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -55,7 +54,7 @@ function Login() {
                     color: "success"
                 })
                 navigate('/shop');
-                localStorage.setItem('active',user.email);
+                localStorage.setItem('active', user.email);
                 window.location.reload();
             } else {
                 setMsg({
@@ -64,63 +63,30 @@ function Login() {
                 })
             }
         }
-        
+
     }
 
-    
-     return(
+
+    return (
         <>
-        <AdminNav />
-
-         <Components.Container>
-             <Components.SignUpContainer signinIn={signIn}>
-                 <Components.Form className="login">
-                     <Components.Title>Create Account</Components.Title>
-                     <Components.Input type='email' placeholder='Email' />
-                     <Components.Input type='password' placeholder='Password' />
-                     <Components.Button>Sign Up</Components.Button>
-                 </Components.Form>
-             </Components.SignUpContainer>
-
-             <Components.SignInContainer signinIn={signIn}>
-                  <Components.Form className="login" onSubmit={handleSubmit}>
-                      <Components.Title>Sign in</Components.Title>
-                      <Components.Input onChange={e => setEmail(e.target.value)} type='email' placeholder='Email' />
-                      <Components.Input onChange={e => setPassword(e.target.value)} type='password' placeholder='Password' />
-                      <p className={alert}>{msg.text}</p>
-                      <Components.Button >Sign In</Components.Button>
-                  </Components.Form>
-             </Components.SignInContainer>
-
-             <Components.OverlayContainer signinIn={signIn}>
-                 <Components.Overlay signinIn={signIn}>
-
-                 <Components.LeftOverlayPanel signinIn={signIn}>
-                     <Components.Title>Welcome Back!</Components.Title>
-                     <Components.Paragraph>
-                         To keep connected with us please login with your personal info
-                     </Components.Paragraph>
-                     <Components.GhostButton onClick={() => toggle(true)}>
-                         Sign In
-                     </Components.GhostButton>
-                     </Components.LeftOverlayPanel>
-
-                     <Components.RightOverlayPanel signinIn={signIn}>
-                       <Components.Title>Hello, Friend!</Components.Title>
-                       <Components.Paragraph>
-                           Enter Your personal details and start journey with us
-                       </Components.Paragraph>
-                           <Components.GhostButton onClick={() => toggle(false)}>
-                               Sign Up
-                           </Components.GhostButton> 
-                     </Components.RightOverlayPanel>
- 
-                 </Components.Overlay>
-             </Components.OverlayContainer>
-
-         </Components.Container>
-         </>
-     )
+            <AdminNav />
+            <Container>
+            <form onSubmit={handleSubmit}>
+                <h1 className="text-center">Sign in</h1>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" onChange={e => setEmail(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                    <input type="password" className="form-control" onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" />
+                </div>
+                <p className={alert}>{msg.text}</p>
+                <button type="submit" className="btn btn-primary">Login</button>
+            </form>
+            </Container>
+        </>
+    )
 }
 
 export default Login;
