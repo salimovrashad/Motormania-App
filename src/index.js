@@ -20,7 +20,6 @@ const mystore = configureStore();
 const result = (
   <Provider store={mystore}>
       <App />
-      
   </Provider>
 )
 

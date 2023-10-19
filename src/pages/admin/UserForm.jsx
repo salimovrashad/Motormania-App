@@ -16,10 +16,7 @@ const UserForm = ({sendData,edituser}) => {
             password:password
         })
     }
-
-    const aleert =e=>{
-        alert("Sign Up Success")
-    }
+    
     return (
         <div className="d-flex justify-content-center">
             <Col md={6}>
@@ -39,7 +36,7 @@ const UserForm = ({sendData,edituser}) => {
                         <Form.Control value={password} onChange={e=>setPassword(e.target.value)} type="password" required placeholder="Enter password" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" onClick={aleert}>
+                    <Button variant="primary" type="submit">
                        {edituser?"Edit":"Add"}
                     </Button>
                 </Form>
