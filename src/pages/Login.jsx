@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminNav from "../components/AdminNav";
 import { Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 
 const admin = {
@@ -11,12 +12,13 @@ const admin = {
 
 const user = {
     email: "user@user.com",
-    password: 'user'
+    password: "user"
 }
 
 
 
 function Login() {
+    const users = useSelector(p=>p.lr);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -48,13 +50,13 @@ function Login() {
                     color: "warning"
                 })
             }
-            if (email === user.email && password === user.password) {
+            if ((email === users[0].email || email === user.email) && (password === users[0].password || password === user.password)) {
                 setMsg({
                     text: "Login successfully",
                     color: "success"
                 })
                 navigate('/shop');
-                localStorage.setItem('active', user.email);
+                localStorage.setItem('active', user.email && users[0].email);
                 window.location.reload();
             } else {
                 setMsg({

@@ -29,6 +29,7 @@ function CollapsibleExample(id) {
   const handleClick = () => {
     navigate('/shop');
   }
+  const users = useSelector(p=>p.lr);
   
   return (
     <>
@@ -55,6 +56,18 @@ function CollapsibleExample(id) {
               {localStorage.getItem('active') === 'user@user.com' ? 
               <>
                 <div className="btn">User</div>
+                <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
+                <Link to="/cart"  className="btn border-danger position-relative me-3">
+                    <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {totalItems}
+                    </span>
+              </Link>
+              </> 
+              :
+              localStorage.getItem('active') === 'selimovresad33@gmail.com' ? 
+              <>
+                <div className="btn">{users[0].name}</div>
                 <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
                 <Link to="/cart"  className="btn border-danger position-relative me-3">
                     <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
