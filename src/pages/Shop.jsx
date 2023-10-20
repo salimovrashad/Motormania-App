@@ -17,6 +17,26 @@ const Shop = () => {
     setCatMotos(catData);
   }
 
+
+
+  //Product sorting
+  const [sortCriteria, setSortCriteria] = useState(null);
+  function handleSorting(a, b) {
+    if (sortCriteria === 'price>') {
+      return parseFloat(b.price) - parseFloat(a.price);
+    } else if (sortCriteria === 'price<') {
+      return parseFloat(a.price) - parseFloat(b.price);
+    }
+    return 0;
+  }
+  const handleSort = (criteria) => {
+    setSortCriteria(criteria);
+  }
+
+
+
+
+
   return (
     <>
     <CollapsibleExample />
@@ -69,18 +89,23 @@ const Shop = () => {
           </li>
         </ul>
       </div>
+            <ul className='navbar-nav'>
+              <li className='nav-link cursor' onClick={() => handleSort('price>')}>Sort by Price(high-low)</li>
+              <li className='nav-link cursor' onClick={() => handleSort('price<')}>Sort by Price(low-high)</li>
+            </ul>
     </div>
   </nav>
+  
 </div>
       <Row className='g-3 mt-3'>
         
-        {catMotos.length === 0 ? motos.map(item=>(
+        {catMotos.length === 0 ? motos.sort(handleSorting).map(item=>(
 
             <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
 
         )) : 
         
-        catMotos.map(item=>(
+        catMotos.sort(handleSorting).map(item=>(
 
             <ShopCard image={item.image} name={item.name} price={item.price} id={item.id} alldata={item}/>
 
