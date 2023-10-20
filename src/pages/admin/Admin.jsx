@@ -34,7 +34,7 @@ function Admin() {
         </tr>
       </thead>
       <tbody>
-        {motos.map((item,count)=>(
+        {motos.reverse().map((item,count)=>(
         <tr key={count}>
           <td>{count+1}</td>
           <td><img src={item.image} width={100} alt="" /></td>

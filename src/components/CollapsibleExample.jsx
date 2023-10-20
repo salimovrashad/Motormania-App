@@ -23,6 +23,7 @@ function CollapsibleExample(id) {
   };
   const [query, setQuery] = useState(null);
   const motos = useSelector(p=>p.mr);
+  const users = useSelector(p=>p.lr);
   const {totalWishlistItems} = useWishlist()
   const navigate = useNavigate();
   
@@ -54,7 +55,7 @@ function CollapsibleExample(id) {
             <div>
               {localStorage.getItem('active') === 'user@user.com' ? 
               <>
-                <div className="btn">User</div>
+                <div className="btn">{users[0].name}</div>
                 <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en"?"Log Out":"Çıxış"}</button>
                 <Link to="/cart"  className="btn border-danger position-relative me-3">
                     <FaCartShopping className="text-danger"/>{lang === "en"?"Shopping Cart":"Səbət"}
