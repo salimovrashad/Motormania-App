@@ -19,26 +19,26 @@ function AdminNav() {
       >
         <Container>
           <Link className="nav-link" to='/home'>
-          <Navbar.Brand>
-            <img
-              width={200}
-              src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png"
-              alt="/"
-            />
-          </Navbar.Brand>
+            <Navbar.Brand>
+              <img
+                width={200}
+                src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png"
+                alt="/"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-around">
             <Nav className="w-50 d-flex justify-content-center"></Nav>
             <Nav>
               <Button variant="danger me-2" onClick={() => {
-                mode === 'light' ?setMode('dark'):setMode('light');
-                mode === 'light' ?localStorage.setItem('mode','dark'):localStorage.setItem('mode','light');
-              }}>{mode==='light'?"DARK":"LIGHT"}</Button>
+                mode === 'light' ? setMode('dark') : setMode('light');
+                mode === 'light' ? localStorage.setItem('mode', 'dark') : localStorage.setItem('mode', 'light');
+              }}>{mode === 'light' ? "DARK" : "LIGHT"}</Button>
               <Button variant="danger px-3" onClick={() => {
-                lang === 'az' ?setLang('en'):setLang('az');
-                lang === 'az' ?localStorage.setItem('lang','en'):localStorage.setItem('lang','az');
-              }}>{lang === 'az'?'EN':'AZ'}</Button>
+                lang === 'az' ? setLang('en') : setLang('az');
+                lang === 'az' ? localStorage.setItem('lang', 'en') : localStorage.setItem('lang', 'az');
+              }}>{lang === 'az' ? 'EN' : 'AZ'}</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

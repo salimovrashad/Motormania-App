@@ -7,18 +7,18 @@ import UserForm from './admin/UserForm'
 import AdminNav from '../components/AdminNav'
 
 const SignUp = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <>
-    <AdminNav />
-    <Container className='pb-5'>
+      <AdminNav />
+      <Container className='pb-5'>
         <h1 className='text-center my-3'>Sign Up</h1>
-        <UserForm sendData={(i)=>{
-                dispatch(addUserToDatabase(i));
-                navigate('/login')
-        }}/>
-    </Container>
+        <UserForm sendData={(i) => {
+          dispatch(addUserToDatabase(i));
+          navigate('/login')
+        }} />
+      </Container>
     </>
   )
 }

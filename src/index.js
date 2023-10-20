@@ -15,19 +15,14 @@ import { getBlogsFromDatabase } from './manager/actions/blogAction';
 import { getUsersFromDatabase } from './manager/actions/loginAction';
 
 const mystore = configureStore();
-
-
 const result = (
   <Provider store={mystore}>
-      <App />
+    <App />
   </Provider>
 )
-
-
 ReactDOM.render(<div className='center'><img src={photo} alt="" /></div>, document.getElementById('root'));
-
 mystore.dispatch(getMotosFromDatabase()).then(() => {
-    ReactDOM.render(result, document.getElementById('root'));
+  ReactDOM.render(result, document.getElementById('root'));
 })
 mystore.dispatch(getBlogsFromDatabase()).then(() => {
   ReactDOM.render(result, document.getElementById('root'));

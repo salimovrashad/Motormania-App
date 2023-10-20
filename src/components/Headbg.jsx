@@ -17,21 +17,21 @@ import { Link } from "react-router-dom";
 const Headbg = () => {
   const [lang] = useContext(LangContext);
 
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init();
-  },[])
+  }, [])
   return (
     <>
-    <CollapsibleExample />
+      <CollapsibleExample />
       <div className="bghead w-100">
         <Container>
           <div className="px-4 py-5 my-5 col-lg-6" data-aos="zoom-in">
             <h1 className="display-3 fw-bold text-light">
-              {lang === "en"?"Find the Best Motorbike Parts For Your Vehicles":"Motosiklet üçün ən yaxşı ehtiyyat hissələrini tapın"}
+              {lang === "en" ? "Find the Best Motorbike Parts For Your Vehicles" : "Motosiklet üçün ən yaxşı ehtiyyat hissələrini tapın"}
             </h1>
             <div className="col-lg-12">
               <p className="lead mb-4 text-light">
-              {lang === "en"?"Browse our range of Gore-Tex motorcycle clothing including : Rukka, Dainese, Richa, Alpinestars, and more":"Gore-Tex motosiklet geyimləri də daxil olmaqla bizim çeşidlərimizə nəzər salın: Rukka, Dainese, Richa, Alpinestars və s."}
+                {lang === "en" ? "Browse our range of Gore-Tex motorcycle clothing including : Rukka, Dainese, Richa, Alpinestars, and more" : "Gore-Tex motosiklet geyimləri də daxil olmaqla bizim çeşidlərimizə nəzər salın: Rukka, Dainese, Richa, Alpinestars və s."}
               </p>
               <div className="d-grid gap-2 d-sm-flex justify-content-sm-start">
                 <Link to="/shop"><button
@@ -43,9 +43,9 @@ const Headbg = () => {
                       left: 0,
                       behavior: "smooth",
                     });
-                    }}
+                  }}
                 >
-                {lang === "en"?"Shop Now":"İndi Al"}
+                  {lang === "en" ? "Shop Now" : "İndi Al"}
 
                 </button>
                 </Link>

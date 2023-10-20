@@ -6,20 +6,19 @@ import UserForm from '../UserForm'
 import { editUserFromDatabase } from '../../../manager/actions/loginAction'
 
 const EditUser = () => {
-    const {id} = useParams();
-    const users = useSelector(p=>p.lr);
-    const selectuser = users.find(i=>i.id.toString() === id);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    
+  const { id } = useParams();
+  const users = useSelector(p => p.lr);
+  const selectuser = users.find(i => i.id.toString() === id);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Container className='pb-5'>
-        <h1 className='text-center my-3'>Edit User</h1>
-        <UserForm edituser={selectuser} sendData={(i)=>{
-            dispatch(editUserFromDatabase(selectuser.id,i))   
-            navigate('/usersadmin')
+      <h1 className='text-center my-3'>Edit User</h1>
+      <UserForm edituser={selectuser} sendData={(i) => {
+        dispatch(editUserFromDatabase(selectuser.id, i))
+        navigate('/usersadmin')
 
-        }}/>
+      }} />
     </Container>
   )
 }

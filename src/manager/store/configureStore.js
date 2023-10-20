@@ -6,14 +6,14 @@ import thunk from "redux-thunk";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const configureStore = ()=>{
+const configureStore = () => {
     const store = createStore(
         combineReducers({
             mr: motoReducer,
             br: blogReducer,
             lr: loginReducer
-        }), 
-        
+        }),
+
         composeEnhancers(applyMiddleware(thunk)));
     return store;
 }

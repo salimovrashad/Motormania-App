@@ -1,51 +1,49 @@
 import database from '../../firebase/firebaseConfig';
 
-export const addBlog = (blog)=>({
+export const addBlog = (blog) => ({
   type: "ADD_BLOG",
   blog
 })
 
-export const addBlogToDatabase = (blogData={})=>{
+export const addBlogToDatabase = (blogData = {}) => {
   return (dispatch) => {
-    const { image='', name='', describtion='', shortdes='' } = blogData;
-    const blog = {image,name,describtion,shortdes};
+    const { image = '', name = '', describtion = '', shortdes = '' } = blogData;
+    const blog = { image, name, describtion, shortdes };
 
     database.ref("blogs").push(blog).then((res) => {
-        dispatch(addBlog({
-            id: res.key,
-            ...blog
-        }))
+      dispatch(addBlog({
+        id: res.key,
+        ...blog
+      }))
     })
-}
+  }
 }
 
-
-export const editBlog =(id,update)=>({
-  type:"EDIT_BLOG",
+export const editBlog = (id, update) => ({
+  type: "EDIT_BLOG",
   id,
   update
 })
 
 export const editBlogFromDatabase = (id, updates) => {
   return (dispatch) => {
-      return database.ref(`blogs/${id}`).update(updates).then(() => {
-          dispatch(editBlog(id,updates));
-      })
+    return database.ref(`blogs/${id}`).update(updates).then(() => {
+      dispatch(editBlog(id, updates));
+    })
   }
 }
 
-
-export const deleteBlog =(id)=>({
-  type:"REMOVE_BLOG",
-  myid:id
+export const deleteBlog = (id) => ({
+  type: "REMOVE_BLOG",
+  myid: id
 })
 
 export const removeBlogFromDatabase = (id) => {
   return (dispatch) => {
-      return database.ref(`blogs/${id}`).remove().then(() => {
-          dispatch(deleteBlog(id));
-      })
-  }   
+    return database.ref(`blogs/${id}`).remove().then(() => {
+      dispatch(deleteBlog(id));
+    })
+  }
 }
 
 export const getBlogs = (blogs) => ({
@@ -55,17 +53,17 @@ export const getBlogs = (blogs) => ({
 
 export const getBlogsFromDatabase = () => {
   return (dispatch) => {
-      return database.ref("blogs").once("value").then((snapshot) => {
-          const blogs = [];
+    return database.ref("blogs").once("value").then((snapshot) => {
+      const blogs = [];
 
-          snapshot.forEach((blog) => {
-              blogs.push({
-                  id: blog.key,
-                  ...blog.val()
-              })
-          })
-
-          dispatch(getBlogs(blogs));
+      snapshot.forEach((blog) => {
+        blogs.push({
+          id: blog.key,
+          ...blog.val()
+        })
       })
+
+      dispatch(getBlogs(blogs));
+    })
   }
 }
