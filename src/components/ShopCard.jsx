@@ -54,7 +54,7 @@ const ShopCard = ({ image, name, price, id, alldata }) => {
   };
 
   return (
-    <Col sm={12} md={3}>
+    <Col sm={6} lg={3} md={4}>
       <div className="card darkcard border" style={{ width: '19rem' }}>
         <div className="card-body">
           <div key={id} className='d-flex flex-row-reverse'><div className='cursor p-1' onClick={handleWishlistToggle}>{inWishlist(id) ? <AiFillHeart className='fs-4 text-danger' /> : <AiOutlineHeart className='fs-4' />}</div></div>

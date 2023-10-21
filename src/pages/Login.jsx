@@ -64,7 +64,7 @@ function Login() {
     return (
         <>
             <AdminNav />
-            <Container>
+            <Container className="col-6">
                 <form onSubmit={handleSubmit}>
                     <h1 className="text-center">Sign in</h1>
                     <div className="mb-3">
@@ -76,7 +76,7 @@ function Login() {
                         <input type="password" className="form-control" onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" />
                     </div>
                     <p className={alert}>{msg.text}</p>
-                    <button type="submit" className="btn btn-primary">Login</button>
+                    <button type="submit" className="btn btn-danger">Login</button>
                 </form>
             </Container>
         </>

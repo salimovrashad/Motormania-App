@@ -46,7 +46,7 @@ function CollapsibleExample(id) {
               alt="/"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="set-icon"/>
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-around">
             <Nav className="w-50 d-flex justify-content-center">
 
@@ -73,12 +73,9 @@ function CollapsibleExample(id) {
                     :
                     <>
                       <Link className="btn" to="/login"><FaUserAlt className="text-danger" />{lang === "en" ? "Login Here" : "Giriş"}</Link>
-                      <Link className="btn" to="/signup"><FaUserAlt className="text-danger" />{lang === "en" ? "Sign Up" : "Giriş"}</Link>
+                      <Link className="btn" to="/signup"><FaUserAlt className="text-danger" />{lang === "en" ? "Sign Up" : "Qeydiyyat"}</Link>
                     </>
                 }
-
-
-
                 <Button className="pt-0" variant="danger me-2" onClick={() => {
                   mode === 'light' ? setMode('dark') : setMode('light');
                   mode === 'light' ? localStorage.setItem('mode', 'dark') : localStorage.setItem('mode', 'light');
@@ -122,7 +119,7 @@ function CollapsibleExample(id) {
 
       <Navbar expand="lg" className="bg-light py-3">
         <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="menu-icon"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link className="nav-link" to="/home">

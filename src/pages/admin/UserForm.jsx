@@ -31,7 +31,7 @@ const UserForm = ({ sendData, edituser }) => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control value={password} onChange={e => setPassword(e.target.value)} type="password" required placeholder="Enter password" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="danger" type="submit">
                         {edituser ? "Edit" : "Add"}
                     </Button>
                 </Form>

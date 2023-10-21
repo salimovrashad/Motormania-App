@@ -20,6 +20,7 @@ const result = (
     <App />
   </Provider>
 )
+
 ReactDOM.render(<div className='center'><img src={photo} alt="" /></div>, document.getElementById('root'));
 mystore.dispatch(getMotosFromDatabase()).then(() => {
   ReactDOM.render(result, document.getElementById('root'));

@@ -1,4 +1,8 @@
 // This Project is https://github.com/salimovrashad
+iframe#webpack-dev-server-client-overlay {
+    display: none !important;
+}
+
 .font * {
     font-family: Oswald;
 }
@@ -158,4 +162,35 @@ li * {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: red;
+  }
+
+.set-icon{
+    background: url(../images/settings.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.menu-icon{
+    background: url(../images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.navbar-toggler-icon{
+    background: none;
 }
