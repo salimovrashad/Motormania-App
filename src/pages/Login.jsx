@@ -8,10 +8,6 @@ const admin = {
     email: "admin@admin.com",
     password: 'admin'
 }
-const user = {
-    email: "user@user.com",
-    password: "user"
-}
 
 function Login() {
     const users = useSelector(p => p.lr)
@@ -22,7 +18,6 @@ function Login() {
         text: "",
         color: ""
     })
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email || !password) {
@@ -45,20 +40,25 @@ function Login() {
                     color: "warning"
                 })
             }
-            if ((email === users[0].email) && (password === users[0].password)) {
-                setMsg({
-                    text: "Login successfully",
-                    color: "success"
-                })
-                navigate('/shop');
-                localStorage.setItem('active', user.email);
-                window.location.reload();
-            } else {
-                setMsg({
-                    text: "email or password is wrong!",
-                    color: "warning"
-                })
-            }
+
+            users.forEach(user => {
+                if ((email === user.email) && (password === user.password)) {
+                    setMsg({
+                        text: "Login successfully",
+                        color: "success"
+                    })
+                    navigate('/shop');
+                    localStorage.setItem('active', user.email);
+                    window.location.reload();
+                } else {
+                    setMsg({
+                        text: "email or password is wrong!",
+                        color: "warning"
+                    })
+                }
+            });
+
+            
         }
     }
     return (

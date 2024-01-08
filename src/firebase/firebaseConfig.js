@@ -2,14 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyARSIBuqKmD_ZcMVAAR_F9phU16ecQzyek",
-    authDomain: "motormania-app-712a8.firebaseapp.com",
-    databaseURL: "https://motormania-app-712a8-default-rtdb.firebaseio.com",
-    projectId: "motormania-app-712a8",
-    storageBucket: "motormania-app-712a8.appspot.com",
-    messagingSenderId: "49862373250",
-    appId: "1:49862373250:web:0c0ed5f6fd21deade1e99b"
-  };
+  apiKey: "AIzaSyDiZLlU9y3P-9U5CpA4e2ptj6lUWkMkkak",
+  authDomain: "motormania-web.firebaseapp.com",
+  databaseURL: "https://motormania-web-default-rtdb.firebaseio.com",
+  projectId: "motormania-web",
+  storageBucket: "motormania-web.appspot.com",
+  messagingSenderId: "607136787462",
+  appId: "1:607136787462:web:1f96cfdb7d7ce5c32be787"
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
