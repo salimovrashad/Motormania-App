@@ -7,6 +7,10 @@ import { Container } from 'react-bootstrap'
 
 const SuccessPage = () => {
   const motos = useSelector(p => p.mr);
+  const handleExit = () => {
+    localStorage.removeItem('react-use-cart');
+    window.reload();
+  }
   const settings = {
     infinite: true,
     dots: true,
@@ -49,7 +53,7 @@ const SuccessPage = () => {
       <div className='center column'>
         <h1>Payment Successfull</h1>
         <img src="https://www.caaz.co.zw/wp-content/uploads/2023/01/success.gif" alt="" />
-        <Link to="/shop" className='btn btn-success px-5'>NEXT TO SHOP</Link>
+        <Link to="/shop" onClick={handleExit} className='btn btn-success px-5'>NEXT TO SHOP</Link>
       </div>
       <h1>Recommended Products</h1>
       <Slider {...settings}>

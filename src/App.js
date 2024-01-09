@@ -52,15 +52,15 @@ const Main = () => {
           <Route path='/success' element={<SuccessPage />}></Route>
           <Route path='/wishlist' element={<Wishlist />}></Route>
           <Route path='/faqpage' element={<Faqpage />}></Route>
-          <Route path='/admin' element={<Admin />}></Route>
-          <Route path='/admin/add' element={<AddMoto />}></Route>
-          <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
-          <Route path='/usersadmin' element={<UsersAdmin />}></Route>
-          <Route path='/usersadmin/add' element={<AddUser />}></Route>
-          <Route path='/usersadmin/edit/:id' element={<EditUser />}></Route>
-          <Route path='/blogadmin' element={<BlogAdmin />}></Route>
-          <Route path='/blogadmin/add' element={<AddBlog />}></Route>
-          <Route path='/blogadmin/edit/:id' element={<EditBlog />}></Route>
+          {/* <Route path='/admin' element={<Admin />}></Route> */}
+          {/* <Route path='/admin/add' element={<AddMoto />}></Route> */}
+          {/* <Route path='/admin/edit/:id' element={<EditMoto />}></Route> */}
+          {/* <Route path='/usersadmin' element={<UsersAdmin />}></Route> */}
+          {/* <Route path='/usersadmin/add' element={<AddUser />}></Route> */}
+          {/* <Route path='/usersadmin/edit/:id' element={<EditUser />}></Route> */}
+          {/* <Route path='/blogadmin' element={<BlogAdmin />}></Route> */}
+          {/* <Route path='/blogadmin/add' element={<AddBlog />}></Route> */}
+          {/* <Route path='/blogadmin/edit/:id' element={<EditBlog />}></Route> */}
           <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </div>

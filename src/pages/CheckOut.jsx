@@ -181,7 +181,7 @@ const CheckOut = () => {
                     behavior: "smooth",
                   });
                 }}
-                  to={localStorage.getItem('active') === 'user@user.com' ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
+                  to={localStorage.getItem('active') ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
               </form>
             </div>
           </div>

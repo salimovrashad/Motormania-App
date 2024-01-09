@@ -43,13 +43,15 @@ function CollapsibleExample(id) {
         className="bg-light py-3 border-bottom"
       >
         <Container>
-          <Navbar.Brand to='/home'>
-            <img
-              width={200}
-              src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png"
-              alt="/"
-            />
-          </Navbar.Brand>
+          <Link className="nav-link" to='/home'>
+            <Navbar.Brand>
+              <img
+                width={200}
+                src="https://themebing.com/wp/motormania/wp-content/uploads/2021/02/logo.png"
+                alt="/"
+              />
+            </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="set-icon"/>
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-around">
             <Nav className="w-50 d-flex justify-content-center">
@@ -59,7 +61,7 @@ function CollapsibleExample(id) {
               <div>
                 {user.includes(localStorage.getItem('active')) ?
                   <>
-                    <div className="btn">{username}</div>
+                    <div className="btn">{localStorage.getItem('active')}</div>
                     <button className="btn btn-outline-danger me-3" onClick={() => handleExit()}>{lang === "en" ? "Log Out" : "Çıxış"}</button>
                     <Link to="/cart" className="btn border-danger position-relative me-3">
                       <FaCartShopping className="text-danger" />{lang === "en" ? "Shopping Cart" : "Səbət"}
