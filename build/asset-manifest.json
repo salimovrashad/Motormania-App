@@ -1,7 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.6f5d09a0.css",
-    "main.js": "/static/js/main.bd13011c.js",
+    "main.css": "/static/css/main.de2cd33f.css",
+    "main.js": "/static/js/main.fb3e81c5.js",
+    "static/media/head-moto-photo.jpg": "/static/media/head-moto-photo.f128a057c9bc8f3eafba.jpg",
+    "static/media/banner-blog.jpg": "/static/media/banner-blog.fa4e604683004ef078da.jpg",
     "static/media/Spinner-1s-64px.gif": "/static/media/Spinner-1s-64px.695b32408d408c710509.gif",
     "static/media/settings.png": "/static/media/settings.41e67641bc7dabe09ebe.png",
     "static/media/oswald-latin-400-normal.woff": "/static/media/oswald-latin-400-normal.29b8172d8d6782be6270.woff",
@@ -19,11 +21,11 @@
     "static/media/oswald-cyrillic-ext-400-normal.woff2": "/static/media/oswald-cyrillic-ext-400-normal.7b46ac3618f42c81c1cf.woff2",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.6f5d09a0.css.map": "/static/css/main.6f5d09a0.css.map",
-    "main.bd13011c.js.map": "/static/js/main.bd13011c.js.map"
+    "main.de2cd33f.css.map": "/static/css/main.de2cd33f.css.map",
+    "main.fb3e81c5.js.map": "/static/js/main.fb3e81c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f5d09a0.css",
-    "static/js/main.bd13011c.js"
+    "static/css/main.de2cd33f.css",
+    "static/js/main.fb3e81c5.js"
   ]
 }

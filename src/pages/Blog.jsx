@@ -5,6 +5,7 @@ import CollapsibleExample from '../components/CollapsibleExample';
 import FooterBike from '../components/FooterBike';
 import BlogCard from '../components/BlogCard';
 import { useSelector } from 'react-redux';
+import moto from "../images/banner-blog.jpg"
 
 const Blog = () => {
   const [lang] = useContext(LangContext);
@@ -27,7 +28,7 @@ const Blog = () => {
       <main className="container py-5">
         <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
           <div className="col-lg-12 px-0">
-            <img src="https://t3.ftcdn.net/jpg/02/76/70/70/360_F_276707060_WpP9bwHWv0Wdqqn0pEgtSuIgXUvgkbs7.jpg" width="100%" height={300} alt="" srcset="" />
+            <img src={moto} width="100%" height={300} alt="" srcset="" />
           </div>
         </div>
         <div className="row mb-2">
