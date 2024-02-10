@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-https://motormania-web.web.app/
+https://motormania-web-c632e.web.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
