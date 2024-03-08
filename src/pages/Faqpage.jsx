@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import CollapsibleExample from '../components/CollapsibleExample'
 import { LangContext } from '../context/LangContext';
-import { RiArrowRightDoubleFill } from "react-icons/ri";
 import FooterBike from '../components/FooterBike';
 
 const Faqpage = () => {
@@ -14,7 +13,12 @@ const Faqpage = () => {
           <div className="row align-items-center py-5">
             <div className="col-lg-12 text-center text-lg-start">
               <h1 className="display-4 fw-bold lh-1 text-light mb-3">{lang === "en" ? "FAQPage" : "Tez-tez soruşulan suallar"}</h1>
-              <h5 className='text-light'><span className='text-danger'>{lang === "en" ? "Home" : "Ana Səhifə"}</span><RiArrowRightDoubleFill />{lang === "en" ? "FAQPage" : "Tez-tez soruşulan suallar"}</h5>
+              <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item breadcrumb-divider fs-5"><a href="/home" className='text-danger'>{lang === "en" ? "Home" : "Ana Səhifə"}</a></li>
+                    <li className="breadcrumb-item fs-5 text-light">{lang === "en" ? "FAQPage" : "Tez-tez soruşulan suallar"}</li>
+                  </ol>
+              </nav>
             </div>
           </div>
         </div>

@@ -1,12 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import FooterBike from '../components/FooterBike'
-import { RiArrowRightDoubleFill } from "react-icons/ri";
 import { LangContext } from '../context/LangContext';
 import CollapsibleExample from '../components/CollapsibleExample';
 import { Col, Container, Row } from 'react-bootstrap';
+import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
   const [lang] = useContext(LangContext);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_2ynuj7j', 'template_lb5b14j', form.current, {
+        publicKey: 'UJKshmsZO5yNGPDMN',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <div>
       <CollapsibleExample />
@@ -15,7 +33,12 @@ const ContactUs = () => {
           <div className="row align-items-center py-5">
             <div className="col-lg-12 text-center text-lg-start">
               <h1 className="display-4 fw-bold lh-1 text-light mb-3">{lang === "en" ? "Contact Us" : "Bizimlə Əlaqə"}</h1>
-              <h5 className='text-light'><span className='text-danger'>{lang === "en" ? "Home" : "Ana Səhifə"}</span><RiArrowRightDoubleFill />{lang === "en" ? "Contact Us" : "Bizimlə Əlaqə"}</h5>
+              <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                  <li className="breadcrumb-item breadcrumb-divider fs-5"><a href="/home" className='text-danger'>{lang === "en" ? "Home" : "Ana Səhifə"}</a></li>
+                  <li className="breadcrumb-item fs-5 text-light">{lang === "en" ? "Contact Us" : "Bizimlə Əlaqə"}</li>
+                </ol>
+              </nav>
             </div>
           </div>
         </div>
@@ -32,16 +55,16 @@ const ContactUs = () => {
             <h4 className='text-danger'>{lang === "en" ? "Address" : "Ünvan"}:</h4>
             <p>(843) 846-2230 20 Island Tank Rd Beaufort, South Carolina(SC).</p>
             <h4 className='text-danger'>Email:</h4>
-            <p>motormania@mail.com</p>
+            <p>selimovresad33@gmail.com</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            <form className="contact__form w-100">
+            {/* <form className="contact__form w-100" ref={form} onSubmit={sendEmail}>
               <Row className='mb-4'>
                 <Col lg="6" className="form-group">
                   <input
                     className="form-control"
                     id="name"
-                    name="name"
+                    name="user_name"
                     placeholder="Name"
                     type="text"
                     required
@@ -51,7 +74,7 @@ const ContactUs = () => {
                   <input
                     className="form-control rounded-0"
                     id="email"
-                    name="email"
+                    name="user_email"
                     placeholder="Email"
                     type="email"
                     required
@@ -74,7 +97,18 @@ const ContactUs = () => {
                   </button>
                 </Col>
               </Row>
+            </form> */}
+
+            <form ref={form} onSubmit={sendEmail}>
+              <label>Name</label>
+              <input type="text" name="user_name" />
+              <label>Email</label>
+              <input type="email" name="user_email" />
+              <label>Message</label>
+              <textarea name="message" />
+              <input type="submit" value="Send" />
             </form>
+
           </Col>
         </Row>
       </Container>

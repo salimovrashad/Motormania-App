@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.de2cd33f.css",
-    "main.js": "/static/js/main.fb3e81c5.js",
+    "main.css": "/static/css/main.aa6335e0.css",
+    "main.js": "/static/js/main.0b08de99.js",
     "static/media/head-moto-photo.jpg": "/static/media/head-moto-photo.f128a057c9bc8f3eafba.jpg",
     "static/media/banner-blog.jpg": "/static/media/banner-blog.fa4e604683004ef078da.jpg",
     "static/media/Spinner-1s-64px.gif": "/static/media/Spinner-1s-64px.695b32408d408c710509.gif",
@@ -21,11 +21,11 @@
     "static/media/oswald-cyrillic-ext-400-normal.woff2": "/static/media/oswald-cyrillic-ext-400-normal.7b46ac3618f42c81c1cf.woff2",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.de2cd33f.css.map": "/static/css/main.de2cd33f.css.map",
-    "main.fb3e81c5.js.map": "/static/js/main.fb3e81c5.js.map"
+    "main.aa6335e0.css.map": "/static/css/main.aa6335e0.css.map",
+    "main.0b08de99.js.map": "/static/js/main.0b08de99.js.map"
   },
   "entrypoints": [
-    "static/css/main.de2cd33f.css",
-    "static/js/main.fb3e81c5.js"
+    "static/css/main.aa6335e0.css",
+    "static/js/main.0b08de99.js"
   ]
 }

@@ -41,7 +41,7 @@ const FooterBike = () => {
                 <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                   <label htmlFor="newsletter1" className="visually-hidden">{lang === "en" ? "Email Address" : "E-Poçt Adresi"}</label>
                   <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
-                  <button className="btn btn-danger rounded-pill" type="button">{lang === "en" ? "Subscribe" : "Abunə ol"}</button>
+                  <button className="btn btn-danger rounded-pill" type="button">{lang === "en" ? "Subscribe" : "Abunə Ol"}</button>
                 </div>
               </form>
             </div>
@@ -49,7 +49,7 @@ const FooterBike = () => {
           <div className="d-flex flex-column flex-sm-row justify-content-between pt-4 border-top">
             <p>© 2023 Salimov Rashad. All rights reserved.</p>
             <ul className="list-unstyled d-flex">
-              <li className="ms-3"><a className="link-body-emphasis" href="/">f</a></li>
+              <li className="ms-3"><a className="link-body-emphasis" href="/"></a></li>
               <li className="ms-3"><a className="link-body-emphasis" href="/"><svg className="bi" width={24} height={24}><use xlinkHref="#instagram" /></svg></a></li>
               <li className="ms-3"><a className="link-body-emphasis" href="/"><svg className="bi" width={24} height={24}><use xlinkHref="#facebook" /></svg></a></li>
             </ul>

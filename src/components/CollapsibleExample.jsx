@@ -26,7 +26,7 @@ function CollapsibleExample(id) {
 
   const users = useSelector(p => p.lr);
   let user = users.map(element => element.email);
-  let username = users.map(element => element.name.toUpperCase());
+  // let username = users.map(element => element.name.toUpperCase());
 
   const { totalWishlistItems } = useWishlist()
   const navigate = useNavigate();

@@ -6,6 +6,7 @@ import FooterBike from '../components/FooterBike';
 import { Button } from 'react-bootstrap';
 import { LangContext } from '../context/LangContext';
 import { useCart } from 'react-use-cart';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Details = () => {
   const { addItem } = useCart();
@@ -14,6 +15,16 @@ const Details = () => {
   const { url } = useParams();
   const productdetails = mrState.find(p => p.id.toString() === url)
   const [image, setImage] = useState(productdetails.image);
+  const notify = () => toast.success('Product added to cart', {
+    position: "bottom-right",
+    autoClose: 400,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+  });
   return (
     <>
       <CollapsibleExample />
@@ -33,8 +44,20 @@ const Details = () => {
             <p className="lead">{lang === "en" ? productdetails.describtion : productdetails.describtionaz}</p>
             <p className='lead'>{productdetails.price} $</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <Button onClick={() => { (addItem(productdetails)) }} type="button" className="btn btn-danger btn-lg px-4 me-md-2">{lang === "en" ? "Add To Cart" : "Səbətə Əlavə Et"}</Button>
+              <Button onClick={() => { notify(addItem(productdetails)) }} type="button" className="btn btn-danger btn-lg px-4 me-md-2">{lang === "en" ? "Add To Cart" : "Səbətə Əlavə Et"}</Button>
             </div>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={1000}
+              hideProgressBar={true}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </div>
         </div>
       </div>

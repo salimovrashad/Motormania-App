@@ -14,7 +14,7 @@ export default function BikeFilter() {
   const catData = motos.filter(p => p.type === "Helmets");
 
   const settings = {
-    infinite: false,
+    infinite: true,
     dots: true,
     speed: 1000,
     slidesToShow: 4,
