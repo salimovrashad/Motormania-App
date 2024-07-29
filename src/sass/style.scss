@@ -103,6 +103,10 @@ li * {
     background-image: url(https://themebing.com/wp/motormania/wp-content/uploads/2020/08/breadcrumbs.jpg);
 }
 
+.aboutbg nav {
+    background-color: black !important;
+}
+
 .countbg {
     background-position: center;
     background-size: cover;
@@ -193,4 +197,20 @@ body::-webkit-scrollbar {
 }
 .navbar-toggler-icon{
     background: none;
+}
+
+.login {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

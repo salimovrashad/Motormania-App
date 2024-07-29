@@ -64,6 +64,7 @@ function Login() {
     return (
         <>
             <AdminNav />
+            <div className="login">
             <Container className="col-6">
                 <form onSubmit={handleSubmit}>
                     <h1 className="text-center">Sign in</h1>
@@ -79,6 +80,7 @@ function Login() {
                     <button type="submit" className="btn btn-danger">Login</button>
                 </form>
             </Container>
+            </div>
         </>
     )
 }

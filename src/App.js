@@ -52,7 +52,7 @@ const Main = () => {
           <Route path='/success' element={<SuccessPage />}></Route>
           <Route path='/wishlist' element={<Wishlist />}></Route>
           <Route path='/faqpage' element={<Faqpage />}></Route>
-          {/* <Route path='/admin' element={<Admin />}></Route> */}
+          <Route path='/admin' element={<Admin />}></Route>
           {/* <Route path='/admin/add' element={<AddMoto />}></Route> */}
           {/* <Route path='/admin/edit/:id' element={<EditMoto />}></Route> */}
           {/* <Route path='/usersadmin' element={<UsersAdmin />}></Route> */}

@@ -58,7 +58,7 @@ const ContactUs = () => {
             <p>selimovresad33@gmail.com</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            {/* <form className="contact__form w-100" ref={form} onSubmit={sendEmail}>
+            <form className="contact__form w-100" ref={form} onSubmit={sendEmail}>
               <Row className='mb-4'>
                 <Col lg="6" className="form-group">
                   <input
@@ -97,9 +97,9 @@ const ContactUs = () => {
                   </button>
                 </Col>
               </Row>
-            </form> */}
+            </form>
 
-            <form ref={form} onSubmit={sendEmail}>
+            {/* <form ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" />
               <label>Email</label>
@@ -107,7 +107,7 @@ const ContactUs = () => {
               <label>Message</label>
               <textarea name="message" />
               <input type="submit" value="Send" />
-            </form>
+            </form> */}
 
           </Col>
         </Row>

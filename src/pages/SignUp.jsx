@@ -12,6 +12,7 @@ const SignUp = () => {
   return (
     <>
       <AdminNav />
+      <div className="signup">
       <Container className='pb-5'>
         <h1 className='text-center my-3'>Sign Up</h1>
         <UserForm sendData={(i) => {
@@ -19,6 +20,7 @@ const SignUp = () => {
           navigate('/login')
         }} />
       </Container>
+      </div>
     </>
   )
 }
