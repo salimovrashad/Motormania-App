@@ -47,6 +47,15 @@ const MotoForm = ({ sendData, editmoto }) => {
                         <Form.Label>Photo4</Form.Label>
                         <Form.Control value={image3} onChange={e => setPhoto3(e.target.value)} type="text" placeholder="Enter photo url" />
                     </Form.Group>
+                    <Form.Group className='mb-3'>
+                        <Form.Label>Photos:</Form.Label>
+                        <div className='d-flex justify-content-around'>
+                            <img width={100} src={image} alt="" srcset="" />
+                            <img width={100} src={image1} alt="" srcset="" />
+                            <img width={100} src={image2} alt="" srcset="" />
+                            <img width={100} src={image3} alt="" srcset="" />
+                        </div>
+                    </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Type</Form.Label>
                         <Form.Control value={type} onChange={e => setType(e.target.value)} type="text" placeholder="Example: Bikes, Tires, Accessories, Gloves, Jackets, Boots, Helmets" />

@@ -1,4 +1,4 @@
-import { Button, Col, Container } from 'react-bootstrap';
+import { Button, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -8,10 +8,11 @@ function Admin() {
   const motos = useSelector(p => p.mr);
   const dispatch = useDispatch();
   return (
-    <Container className='py-5'>
+    <div className='py-5 container-fluid'>
+      <h1 className='text-center'>MotorMania Dashboard</h1>
       <Link className="btn btn-danger my-4 me-2" to="/shop">Shop</Link>
       <Link className="btn btn-danger my-4 me-2" to="/admin/add">Add Product</Link>
-      <Link className="btn btn-danger my-4" to="/blogadmin">Blog Admin</Link>
+      <Link className="btn btn-danger my-4 me-2" to="/blogadmin">Blog Admin</Link>
       <Link className="btn btn-danger my-4" to="/usersadmin">Users Admin</Link>
       <Col md={12}>
         <Table className='table-dark' bordered='1px' hover>
@@ -51,7 +52,7 @@ function Admin() {
           </tbody>
         </Table>
       </Col>
-    </Container>
+    </div>
   );
 }
 

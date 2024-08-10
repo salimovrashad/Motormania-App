@@ -8,7 +8,7 @@ import Blog from './pages/Blog'
 import { ModeContext, ModeProvider } from './context/ModeContext'
 import { LangProvider } from './context/LangContext'
 import Admin from './pages/admin/Admin'
-import AddMoto from './pages/admin/update/AddMoto'
+// import AddMoto from './pages/admin/update/AddMoto'
 import EditMoto from './pages/admin/update/EditMoto'
 import Login from './pages/Login'
 import Details from './pages/Details'
@@ -20,14 +20,14 @@ import NotFoundPage from './pages/NotFoundPage'
 import ContactUs from './pages/ContactUs'
 import Wishlist from './pages/Wishlist'
 import { WishlistProvider } from 'react-use-wishlist'
-import BlogAdmin from './pages/admin/BlogAdmin'
-import AddBlog from './pages/admin/update/AddBlog'
-import EditBlog from './pages/admin/update/EditBlog'
+// import BlogAdmin from './pages/admin/BlogAdmin'
+// import AddBlog from './pages/admin/update/AddBlog'
+// import EditBlog from './pages/admin/update/EditBlog'
 import BlogDetails from './pages/BlogDetails'
 import Faqpage from './pages/Faqpage'
-import UsersAdmin from './pages/admin/UsersAdmin'
-import AddUser from './pages/admin/update/AddUser'
-import EditUser from './pages/admin/update/EditUser'
+// import UsersAdmin from './pages/admin/UsersAdmin'
+// import AddUser from './pages/admin/update/AddUser'
+// import EditUser from './pages/admin/update/EditUser'
 import SignUp from './pages/SignUp'
 
 
@@ -54,7 +54,7 @@ const Main = () => {
           <Route path='/faqpage' element={<Faqpage />}></Route>
           <Route path='/admin' element={<Admin />}></Route>
           {/* <Route path='/admin/add' element={<AddMoto />}></Route> */}
-          {/* <Route path='/admin/edit/:id' element={<EditMoto />}></Route> */}
+          <Route path='/admin/edit/:id' element={<EditMoto />}></Route>
           {/* <Route path='/usersadmin' element={<UsersAdmin />}></Route> */}
           {/* <Route path='/usersadmin/add' element={<AddUser />}></Route> */}
           {/* <Route path='/usersadmin/edit/:id' element={<EditUser />}></Route> */}
