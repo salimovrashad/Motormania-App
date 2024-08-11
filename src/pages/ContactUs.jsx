@@ -5,10 +5,12 @@ import CollapsibleExample from '../components/CollapsibleExample';
 import { Col, Container, Row } from 'react-bootstrap';
 import emailjs from '@emailjs/browser';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ContactUs = () => {
   const [lang] = useContext(LangContext);
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -25,6 +27,18 @@ const ContactUs = () => {
         },
       );
   };
+
+  const notify = () => toast.success('Email Success Send...', {
+    position: "bottom-right",
+    autoClose: 600,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+  });
+
   return (
     <div>
       <CollapsibleExample />
@@ -92,22 +106,12 @@ const ContactUs = () => {
               <br />
               <Row>
                 <Col lg="12" className="form-group">
-                  <button className="btn btn-outline-danger" type="submit">
+                  <button className="btn btn-outline-danger" type="submit" value="Send" onClick={() => { notify() }}>
                     {lang === "en" ? "Send Message" : "Mesaj Göndər"}
                   </button>
                 </Col>
               </Row>
             </form>
-
-            {/* <form ref={form} onSubmit={sendEmail}>
-              <label>Name</label>
-              <input type="text" name="user_name" />
-              <label>Email</label>
-              <input type="email" name="user_email" />
-              <label>Message</label>
-              <textarea name="message" />
-              <input type="submit" value="Send" />
-            </form> */}
 
           </Col>
         </Row>
@@ -123,6 +127,19 @@ const ContactUs = () => {
         tabIndex="0"
       />
       <FooterBike />
+
+      <ToastContainer
+          position="bottom-right"
+          autoClose={1000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
     </div>
   )
 }

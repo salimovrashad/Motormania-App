@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3abad355.css",
-    "main.js": "/static/js/main.0b30f6e2.js",
+    "main.js": "/static/js/main.96095c32.js",
     "static/media/head-moto-photo.jpg": "/static/media/head-moto-photo.f128a057c9bc8f3eafba.jpg",
     "static/media/banner-blog.jpg": "/static/media/banner-blog.fa4e604683004ef078da.jpg",
     "static/media/Spinner-1s-64px.gif": "/static/media/Spinner-1s-64px.695b32408d408c710509.gif",
@@ -22,10 +22,10 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.3abad355.css.map": "/static/css/main.3abad355.css.map",
-    "main.0b30f6e2.js.map": "/static/js/main.0b30f6e2.js.map"
+    "main.96095c32.js.map": "/static/js/main.96095c32.js.map"
   },
   "entrypoints": [
     "static/css/main.3abad355.css",
-    "static/js/main.0b30f6e2.js"
+    "static/js/main.96095c32.js"
   ]
 }

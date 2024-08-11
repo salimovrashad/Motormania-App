@@ -44,7 +44,7 @@ const FooterBike = () => {
                   <label htmlFor="newsletter1" className="visually-hidden">{lang === "en" ? "Email Address" : "E-Poçt Adresi"}</label>
                   <input id="newsletter1" type="text" className="form-control" placeholder="Email address" />
                   <button className="btn btn-danger rounded-pill" type="button"><RiSendPlaneFill /></button>
-                  <a className='btn btn-danger d-block align-items-center justify-content-center' href="https://api.whatsapp.com/send/?phone=994107182802&text=Salam, &type=phone_number&app_absent=0"><FaWhatsapp /></a>
+                  <a className='btn btn-danger d-block align-items-center justify-content-center' href="https://api.whatsapp.com/send/?phone=994107182802&text=Salam,&type=phone_number&app_absent=0"><FaWhatsapp /></a>
                 </div>
               </form>
             </div>
