@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaCartShopping } from "react-icons/fa6";
-import { FaUserAlt, FaSistrix } from "react-icons/fa";
+import { FaSistrix } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useContext, useState } from "react";
@@ -12,6 +12,7 @@ import { useCart } from "react-use-cart";
 import { useSelector } from "react-redux";
 import { BsMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useWishlist } from "react-use-wishlist";
+import { SlUser, SlLogin } from "react-icons/sl";
 
 function CollapsibleExample(id) {
   const [mode, setMode] = useContext(ModeContext);
@@ -78,8 +79,8 @@ function CollapsibleExample(id) {
                     </>
                     :
                     <>
-                      <Link className="btn" to="/login"><FaUserAlt className="text-danger" />{lang === "en" ? "Login Here" : "Giriş"}</Link>
-                      <Link className="btn" to="/signup"><FaUserAlt className="text-danger" />{lang === "en" ? "Sign Up" : "Qeydiyyat"}</Link>
+                      <Link className="btn" to="/login">{lang === "en" ? "Login Here" : "Giriş"}<SlLogin className="text-danger ms-1" /></Link>
+                      <Link className="btn" to="/signup">{lang === "en" ? "Sign Up" : "Qeydiyyat"}<SlUser className="text-danger ms-1" /></Link>
                     </>
                 }
                 <Button className="pt-0" variant="danger me-2" onClick={() => {

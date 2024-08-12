@@ -1,11 +1,49 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import AdminNav from '../components/AdminNav'
 import { useCart } from 'react-use-cart';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import FooterBike from '../components/FooterBike';
+import emailjs from '@emailjs/browser';
 
 const CheckOut = () => {
   const { items, totalItems, cartTotal } = useCart();
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_2ynuj7j', 'template_lb5b14j', form.current, {
+        publicKey: 'UJKshmsZO5yNGPDMN',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    document.querySelector(".myclass").classList.add("disabled")
+    setTimeout(() => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+      const route = localStorage.getItem('active') ? '/success' : '/login';
+      navigate(route);
+    }, 1000);
+  };
+
+
+
   return (
     <div>
       <AdminNav />
@@ -45,18 +83,18 @@ const CheckOut = () => {
             </div>
             <div className="col-md-7 col-lg-6">
               <h4 className="mb-3">Billing address</h4>
-              <form className="needs-validation" noValidate>
+              <form className="needs-validation" noValidate ref={form} onSubmit={sendEmail}>
                 <div className="row g-3">
                   <div className="col-sm-6">
                     <label htmlFor="firstName" className="form-label">First name</label>
-                    <input type="text" className="form-control" id="firstName" placeholder="Name" defaultValue="" required />
+                    <input type="text" name="user_name" className="form-control" id="firstName" placeholder="Name" defaultValue="" required />
                     <div className="invalid-feedback">
                       Valid first name is required.
                     </div>
                   </div>
                   <div className="col-sm-6">
                     <label htmlFor="lastName" className="form-label">Last name</label>
-                    <input type="text" className="form-control" id="lastName" placeholder="Surname" defaultValue="" required />
+                    <input type="text" name="user_surname" className="form-control" id="lastName" placeholder="Surname" defaultValue="" required />
                     <div className="invalid-feedback">
                       Valid last name is required.
                     </div>
@@ -73,7 +111,7 @@ const CheckOut = () => {
                   </div>
                   <div className="col-12">
                     <label htmlFor="email" className="form-label">Email <span className="text-body-secondary">(Optional)</span></label>
-                    <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+                    <input type="email" name="user_email" className="form-control" id="email" placeholder="you@example.com" />
                     <div className="invalid-feedback">
                       Please enter a valid email address for shipping updates.
                     </div>
@@ -153,7 +191,7 @@ const CheckOut = () => {
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="cc-number" className="form-label">Credit card number</label>
-                    <input type="text" className="form-control" id="cc-number" placeholder required />
+                    <input type="text" name='user_credit' className="form-control" id="cc-number" placeholder required />
                     <div className="invalid-feedback">
                       Credit card number is required
                     </div>
@@ -174,14 +212,17 @@ const CheckOut = () => {
                   </div>
                 </div>
                 <hr className="my-4" />
-                <Link onClick={() => {
-                  window.scroll({
-                    top: 0,
-                    left: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                  to={localStorage.getItem('active') ? "/success" : "/login"}><button className="w-100 btn btn-danger btn-lg" type="submit">Continue to checkout</button></Link>
+                <textarea className='d-none' name="message" 
+                value = {
+                  items.map((item) => (
+                    item.name
+                  ))}/>
+                <input 
+                  className="w-100 btn btn-danger btn-lg myclass" 
+                  type="submit" 
+                  value="Send" 
+                  onClick={handleClick}
+                />
               </form>
             </div>
           </div>
