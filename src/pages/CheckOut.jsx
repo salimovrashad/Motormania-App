@@ -103,7 +103,7 @@ const CheckOut = () => {
                     <label htmlFor="username" className="form-label">Username</label>
                     <div className="input-group has-validation">
                       <span className="input-group-text">@</span>
-                      <input type="text" className="form-control" id="username" placeholder="Username" required />
+                      <input type="text" name='user_username' className="form-control" id="username" placeholder="Username" required />
                       <div className="invalid-feedback">
                         Your username is required.
                       </div>
@@ -118,7 +118,7 @@ const CheckOut = () => {
                   </div>
                   <div className="col-12">
                     <label htmlFor="address" className="form-label">Address</label>
-                    <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
+                    <input type="text" name='user_address' className="form-control" id="address" placeholder="1234 Main St" required />
                     <div className="invalid-feedback">
                       Please enter your shipping address.
                     </div>
@@ -198,25 +198,24 @@ const CheckOut = () => {
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="cc-expiration" className="form-label">Expiration</label>
-                    <input type="text" className="form-control" id="cc-expiration" placeholder required />
+                    <input type="text" name='user_exp' className="form-control" id="cc-expiration" placeholder required />
                     <div className="invalid-feedback">
                       Expiration date required
                     </div>
                   </div>
                   <div className="col-md-3">
                     <label htmlFor="cc-cvv" className="form-label">CVV</label>
-                    <input type="text" className="form-control" id="cc-cvv" placeholder required />
+                    <input type="text" name='user_cvv' className="form-control" id="cc-cvv" placeholder required />
                     <div className="invalid-feedback">
                       Security code required
                     </div>
                   </div>
                 </div>
                 <hr className="my-4" />
-                <textarea className='d-none' name="message" 
-                value = {
-                  items.map((item) => (
-                    item.name
-                  ))}/>
+
+                <input className='d-none' type="text" name='user_total' value={cartTotal} />
+                <textarea className='d-none' name="message" value = {items.map((item) => `${item.name} x ${item.quantity}`).join(', ')}/>
+
                 <input 
                   className="w-100 btn btn-danger btn-lg myclass" 
                   type="submit" 
